@@ -6,6 +6,7 @@ import Error404 from "./components/views/Error404";
 import Home from "./components/views/Home";
 import AgregarCliente from "./components/views/socios/AgregarCliente";
 import EditarCliente from "./components/views/socios/EditarCliente";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
