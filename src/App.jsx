@@ -7,6 +7,7 @@ import Home from "./components/views/Home";
 import AgregarCliente from "./components/views/socios/AgregarCliente";
 import EditarCliente from "./components/views/socios/EditarCliente";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "../src/app.css"
 
 function App() {
   return (
