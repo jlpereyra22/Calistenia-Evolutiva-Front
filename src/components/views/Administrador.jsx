@@ -4,7 +4,7 @@ import Table from "react-bootstrap/Table";
 
 const Administrador = () => {
   return (
-    <section className="imgAdmin mainSection">
+    <section className="bgGradient mainSection">
       <Container className="text-center p-5 text-white">
         <div>
           <h2>Administrador de Clientes</h2>

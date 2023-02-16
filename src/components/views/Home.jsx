@@ -1,5 +1,11 @@
+import icono from "../img/icono.jpeg"
+
 const Home = () => {
-  return <h2>Este es el home</h2>;
+  return (
+    <section className="mainSection text-center bg-black">
+<img src={icono} alt="icono" />
+    </section>
+  )
 };
 
 export default Home;
