@@ -12,7 +12,7 @@
     background-image: url('https://i.pinimg.com/564x/15/bd/61/15bd61fcbfb140da19b2d4c47995e5ad.jpg ');
     height: 100vh;
     width: 100%;
-    
-    background-size : contain;
+    background-repeat : no-repeat;
+    background-size : cover;
  
 }
