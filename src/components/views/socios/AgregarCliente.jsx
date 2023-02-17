@@ -5,36 +5,41 @@ const AgregarCliente = () => {
   return (
     <section className="bg-black">
       <Container>
-        <Form>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <div className="text-center text-white">
+          <h2 >Agregar Cliente </h2>
+          <hr />
+        </div>
+      <div>
+        <Form className="text-white">
+          <Form.Group className="mb-3" controlId="inputNombre">
             <Form.Label>Nombre y Apellido</Form.Label>
             <Form.Control type="text" placeholder="Ingrese el nombre..." />
             <Form.Text className="text-warning">
               Ingrese correctamente los datos
             </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3" controlId="inputDni">
             <Form.Label>DNI</Form.Label>
             <Form.Control type="number" placeholder="Numero de Documento" />
             <Form.Text className="text-warning">
               Ingrese correctamente los datos
             </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3" controlId="inputCel">
             <Form.Label>Celular</Form.Label>
             <Form.Control type="tel" placeholder="Ingrese numero de telefono" />
             <Form.Text className="text-warning">
               Ingrese correctamente los datos
             </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3" controlId="inputEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="mail" placeholder="Ingrese Mail..." />
             <Form.Text className="text-warning">
               Ingrese correctamente los datos
             </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3" controlId="inputFechaN">
             <Form.Label>Fecha de Nacimiento</Form.Label>
             <Form.Control
               type="date"
@@ -44,7 +49,7 @@ const AgregarCliente = () => {
               Ingrese correctamente los datos
             </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3" controlId="inputMembresia">
             <Form.Label>Estado de Membresia</Form.Label>
             <Form.Select aria-label="Estado de Membresia">
               <option>Estado</option>
@@ -55,7 +60,7 @@ const AgregarCliente = () => {
               Ingrese correctamente los datos
             </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+            <Form.Group className="mb-3" controlId="inputFechaIngreso">
             <Form.Label>Fecha de Ingreso</Form.Label>
             <Form.Control type="date" placeholder="Fecha de pago" />
             <Form.Text className="text-warning">
@@ -63,6 +68,7 @@ const AgregarCliente = () => {
             </Form.Text>
           </Form.Group>
         </Form>
+        </div>
       </Container>
     </section>
   );
