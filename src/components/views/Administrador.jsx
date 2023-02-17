@@ -1,6 +1,7 @@
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
+import { Link } from "react-router-dom";
 
 const Administrador = () => {
   return (
@@ -14,9 +15,9 @@ const Administrador = () => {
           <Button variant="outline-success" className="m-3" size="sm">
             Agregar Administrador
           </Button>
-          <Button variant="outline-success" className="m-3" size="sm">
+          <Link  className="m-3 btn btn-outline-success" size="sm" to="/agregarcliente">
             Agregar Cliente
-          </Button>
+          </Link>
         </div>
         <div>
           <h3>Tabla de Miembros</h3>
