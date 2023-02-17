@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import Button from 'react-bootstrap/Button';
 
 const AgregarCliente = () => {
   return (
@@ -67,6 +68,7 @@ const AgregarCliente = () => {
               Ingrese correctamente los datos
             </Form.Text>
           </Form.Group>
+          <Button variant="outline-success" size="lg">Agregar</Button>
         </Form>
         </div>
       </Container>

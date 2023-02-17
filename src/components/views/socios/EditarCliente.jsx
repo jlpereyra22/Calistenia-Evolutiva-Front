@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-
+import Button from 'react-bootstrap/Button';
 const EditarCliente = () => {
     return (
         <section className="bg-black">
@@ -67,6 +67,7 @@ const EditarCliente = () => {
                 Ingrese correctamente los datos
               </Form.Text>
             </Form.Group>
+            <Button variant="outline-success" size="lg">Editar</Button>
           </Form>
           </div>
         </Container>
