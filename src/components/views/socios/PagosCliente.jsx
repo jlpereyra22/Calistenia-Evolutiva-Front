@@ -25,7 +25,7 @@ const PagosCliente = () => {
             </Button>
           </Form>
         </div>
-        <div>
+        <div className="d-flex justify-content-center">
           <Card style={{ width: "50rem" }} className="bgGradient my-5">
             <Card.Body>
               <Card.Title>Armas Francisco</Card.Title>
