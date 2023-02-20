@@ -28,7 +28,7 @@ const PagosCliente = () => {
         <div className="d-flex justify-content-center">
           <Card style={{ width: "50rem" }} className="bgGradient my-5">
             <Card.Body>
-              <Card.Title>Armas Francisco</Card.Title>
+              <Card.Title>Apellido y Nombre: Armas Francisco</Card.Title>
               <Card.Subtitle className="m-3 text-white">
                 DNI:123456789
               </Card.Subtitle>
