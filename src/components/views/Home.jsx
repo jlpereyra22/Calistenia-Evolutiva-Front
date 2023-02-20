@@ -3,7 +3,7 @@ import icono from "../img/icono.jpeg"
 const Home = () => {
   return (
     <section className="mainSection text-center bg-black">
-<img src={icono} alt="icono" />
+<img src={icono} alt="icono" className="imgHome" />
     </section>
   )
 };

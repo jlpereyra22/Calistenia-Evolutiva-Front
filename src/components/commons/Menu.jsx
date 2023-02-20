@@ -27,7 +27,7 @@ const Menu = () => {
               <Nav className="me-auto">
                <NavLink className="btn text-light" to="/pagos">Pagos</NavLink>
                <NavLink className="btn text-light" to="/administrar">Administrar</NavLink>
-               <NavLink className="btn text-light" to="*">Login</NavLink>
+               <NavLink className="btn text-light" to="/loginUser">Login</NavLink>
               </Nav>
             </Navbar.Collapse>
           </Col>
