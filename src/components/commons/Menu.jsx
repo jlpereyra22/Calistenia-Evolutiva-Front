@@ -28,6 +28,7 @@ const Menu = () => {
                <NavLink className="btn text-light" to="/pagos">Pagos</NavLink>
                <NavLink className="btn text-light" to="/administrar">Administrar</NavLink>
                <NavLink className="btn text-light" to="/loginUser">Login</NavLink>
+               <NavLink className="btn text-light" to="/caja">Caja Diaria</NavLink>
               </Nav>
             </Navbar.Collapse>
           </Col>
