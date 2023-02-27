@@ -11,6 +11,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "../src/app.css";
 import PagosCliente from "./components/views/socios/PagosCliente";
 import LoginUsser from "./components/views/LoginUsser";
+import CajaDiaria from "./components/views/cajas/CajaDiaria";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
 
         <Route exact path="/pagos" element={<PagosCliente />} />
         <Route exact path="/loginUser" element={<LoginUsser />} />
+        <Route exact path="/caja" element={<CajaDiaria />} />
       </Routes>
       <Footer />
     </BrowserRouter>
