@@ -11,7 +11,7 @@ const PagosCliente = () => {
         <div>
           <h2 className="text-center">Abono Mensual</h2>
           <hr />
-          <Form className="">
+          <Form className="w-50 p-3">
             <Form.Group className="mb-3" controlId="inputDni">
               <Form.Label>Ingrese DNI</Form.Label>
               <Form.Control type="number" placeholder="Ingrese un Dni...." />
