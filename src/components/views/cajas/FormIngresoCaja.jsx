@@ -59,7 +59,7 @@ const FormIngresoCaja = () => {
             </Form.Text>
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button variant="outline-success" type="submit">
             Submit
           </Button>
         </Form>
