@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
+
 import { Link } from "react-router-dom";
 import { consultarApiCliente } from "../helpers/queris";
 import TablaCliente from "./socios/TablaCliente";
+
 
 const Administrador = () => {
   const [clientes, setClientes] = useState([]);
@@ -53,9 +55,9 @@ const Administrador = () => {
               </tr>
             </thead>
             <tbody>
-
-            {clientes.map((cliente) => ( <TablaCliente key={cliente.id} cliente={cliente} />
-            ))}
+              {clientes.map((cliente) => (
+                <TablaCliente key={cliente.id} cliente={cliente} />
+              ))}
             </tbody>
           </Table>
         </div>

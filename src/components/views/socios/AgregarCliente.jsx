@@ -1,8 +1,12 @@
 import { Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button';
+import { useForm } from "react-hook-form";
+
 
 const AgregarCliente = () => {
+const {register,handleSubmit,formState:{errors}}=useForm()
+
   return (
     <section className="bg-black">
       <Container>
@@ -11,7 +15,7 @@ const AgregarCliente = () => {
           <hr />
         </div>
       <div>
-        <Form className="text-white">
+        <Form className="text-white" onClick={handleSubmit}>
           <Form.Group className="mb-3" controlId="inputNombre">
             <Form.Label>Nombre y Apellido</Form.Label>
             <Form.Control type="text" placeholder="Ingrese el nombre..." />
@@ -68,7 +72,7 @@ const AgregarCliente = () => {
               Ingrese correctamente los datos
             </Form.Text>
           </Form.Group>
-          <Button variant="outline-success" size="lg">Agregar</Button>
+          <Button variant="outline-success" size="lg" type="submit">Agregar</Button>
         </Form>
         </div>
       </Container>
