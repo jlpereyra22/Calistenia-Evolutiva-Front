@@ -5,7 +5,22 @@ export const consultarApiCliente = async () => {
     const respuesta = await fetch(url);
     const listaClientes = await respuesta.json();
     console.log(listaClientes);
-    return(listaClientes);
+    return listaClientes;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const AgregarClienteApi = async (cliente) => {
+  try {
+    const respuesta = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cliente),
+    });
+    return respuesta;
   } catch (error) {
     console.log(error);
   }
