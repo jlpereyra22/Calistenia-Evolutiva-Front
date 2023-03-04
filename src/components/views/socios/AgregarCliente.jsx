@@ -3,6 +3,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useForm } from "react-hook-form";
 import { AgregarClienteApi } from "../../helpers/queris";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const AgregarCliente = () => {
   const {
@@ -14,11 +16,16 @@ const AgregarCliente = () => {
   const onSubmit = (datos) => {
     console.log(datos);
     AgregarClienteApi(datos).then((respuesta)=>{
-      
+      if (respuesta.status===201) {
+        Swal.fire("Cliente Agregado","El cliente fue agregado con exito","success");
+navegacion("/administrar")
+      } else {
+        Swal.fire("Ocurrio un Error","La solicitud no pudo ser procesada, intente nuevamente","error")
+      }
     })
     console.log("Desde Nuestra funcion onSubmit");
   };
-
+const navegacion = useNavigate()
   return (
     <section className="bg-black">
       <Container>

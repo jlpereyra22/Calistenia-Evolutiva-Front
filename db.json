@@ -43,6 +43,28 @@
       "FPago": "02/02/2023",
       "Monto": "4000",
       "id": "4"
+    },
+    {
+      "Nombre": "jose luis",
+      "Dni": "34286341",
+      "Telefono": "3814151922",
+      "Mail": "luispereyra@gmail.com",
+      "FNacimiento": "1900-06-21",
+      "Estado": "Activo",
+      "FPago": "2023-03-04",
+      "Monto": "3000",
+      "id": "PJwXuBw"
+    },
+    {
+      "Nombre": "pereyra jose luis",
+      "Dni": "33456598",
+      "Telefono": "3814564556",
+      "Mail": "chueco@pereyra.com",
+      "FNacimiento": "1990-06-21",
+      "Estado": "Activo",
+      "FPago": "2023-03-04",
+      "Monto": "4000",
+      "id": "B_bCzbK"
     }
   ]
 }
