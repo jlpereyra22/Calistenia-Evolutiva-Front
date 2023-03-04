@@ -56,7 +56,7 @@ const Administrador = () => {
             </thead>
             <tbody>
               {clientes.map((cliente) => (
-                <TablaCliente key={cliente.id} cliente={cliente} />
+                <TablaCliente key={cliente.id} cliente={cliente}  setCliente={setClientes}/>
               ))}
             </tbody>
           </Table>

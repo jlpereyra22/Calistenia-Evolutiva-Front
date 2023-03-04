@@ -25,3 +25,27 @@ export const AgregarClienteApi = async (cliente) => {
     console.log(error);
   }
 };
+
+export const BorrarClienteApi = async (id)=>{
+  try {
+    const respuesta = await fetch(`${url}/${id}`,{
+      method:"DELETE"
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const ObtenerClienteApi = async (id)=>{
+  try {
+    const respuesta = await fetch(`${url}/${id}`);
+    const clienteBuscado = {
+      dato: await respuesta.json(),
+      status: respuesta.status
+    }
+    return clienteBuscado;
+  } catch (error) {
+    console.log(error)
+  }
+}

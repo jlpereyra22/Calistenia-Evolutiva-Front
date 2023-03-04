@@ -1,61 +1,6 @@
 {
   "clientes": [
     {
-      "Nombre": "Armas Franscisco",
-      "Dni": "30459852",
-      "Telefono": "3814123654",
-      "Mail": "fran@gmail.com",
-      "FNacimiento": "26-05-96",
-      "Estado": "Activo",
-      "FPago": "02/03/2023",
-      "Monto": "4000",
-      "id": "1"
-    },
-    {
-      "Nombre": "Wanchneider Federico",
-      "Dni": "35958574",
-      "Telefono": "3815987123",
-      "Mail": "federico@gmail.com",
-      "FNacimiento": "16-07-92",
-      "Estado": "Activo",
-      "FPago": "15/02/2023",
-      "Monto": "4000",
-      "id": "2"
-    },
-    {
-      "Nombre": "Galvez Matias",
-      "Dni": "35967458",
-      "Telefono": "3814859674",
-      "Mail": ",matias@gmail.com",
-      "FNacimiento": "29-07-91",
-      "Estado": "Activo",
-      "FPago": "28/02/2023",
-      "Monto": "4000",
-      "id": "3"
-    },
-    {
-      "Nombre": "Manzi Marcos",
-      "Dni": "36853795",
-      "Telefono": "3815865988",
-      "Mail": "magiamanci@gmail.com",
-      "FNacimiento": "22-010-96",
-      "Estado": "Vencimiento",
-      "FPago": "02/02/2023",
-      "Monto": "4000",
-      "id": "4"
-    },
-    {
-      "Nombre": "jose luis",
-      "Dni": "34286341",
-      "Telefono": "3814151922",
-      "Mail": "luispereyra@gmail.com",
-      "FNacimiento": "1900-06-21",
-      "Estado": "Activo",
-      "FPago": "2023-03-04",
-      "Monto": "3000",
-      "id": "PJwXuBw"
-    },
-    {
       "Nombre": "pereyra jose luis",
       "Dni": "33456598",
       "Telefono": "3814564556",
@@ -65,6 +10,28 @@
       "FPago": "2023-03-04",
       "Monto": "4000",
       "id": "B_bCzbK"
+    },
+    {
+      "Nombre": "Armas francisco",
+      "Dni": "4567812",
+      "Telefono": "32154987",
+      "Mail": "fran@fran",
+      "FNacimiento": "1995-05-20",
+      "Estado": "Activo",
+      "FPago": "2023-03-04",
+      "Monto": "3500",
+      "id": "M-uTaRx"
+    },
+    {
+      "Nombre": "Wanchneider Federico",
+      "Dni": "12345698",
+      "Telefono": "654879123",
+      "Mail": "fede@fede",
+      "FNacimiento": "61990-05-23",
+      "Estado": "Baja",
+      "FPago": "5487-05-21",
+      "Monto": "3700",
+      "id": "AgmV8vj"
     }
   ]
 }
