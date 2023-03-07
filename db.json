@@ -17,9 +17,9 @@
       "Telefono": "32154987",
       "Mail": "fran@fran",
       "FNacimiento": "1995-05-20",
-      "Estado": "Activo",
+      "Estado": "Baja",
       "FPago": "2023-03-04",
-      "Monto": "3500",
+      "Monto": "4000",
       "id": "M-uTaRx"
     },
     {
@@ -30,7 +30,7 @@
       "FNacimiento": "61990-05-23",
       "Estado": "Baja",
       "FPago": "5487-05-21",
-      "Monto": "3700",
+      "Monto": "6000",
       "id": "AgmV8vj"
     }
   ]

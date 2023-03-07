@@ -1,22 +1,23 @@
 import { Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
-import { ObtenerClienteApi } from "../../helpers/queris";
+import {  EditarClienteApi, ObtenerClienteApi } from "../../helpers/queris";
+import Swal from "sweetalert2";
 
 const EditarCliente = () => {
   useEffect(() => {
     ObtenerClienteApi(id).then((respuesta) => {
-      setValue("Nombre",respuesta.dato.Nombre)
-      setValue("Dni",respuesta.dato.Dni)
-      setValue("Telefono",respuesta.dato.Telefono)
-      setValue("Mail",respuesta.dato.Mail)
-      setValue("FNacimiento",respuesta.dato.FNacimiento)
-      setValue("Estado",respuesta.dato.Estado)
-      setValue("FPago",respuesta.dato.FPago)
-      setValue("Monto",respuesta.dato.Monto)
+      setValue("Nombre", respuesta.dato.Nombre);
+      setValue("Dni", respuesta.dato.Dni);
+      setValue("Telefono", respuesta.dato.Telefono);
+      setValue("Mail", respuesta.dato.Mail);
+      setValue("FNacimiento", respuesta.dato.FNacimiento);
+      setValue("Estado", respuesta.dato.Estado);
+      setValue("FPago", respuesta.dato.FPago);
+      setValue("Monto", respuesta.dato.Monto);
       console.log(respuesta);
     });
   }, []);
@@ -25,10 +26,23 @@ const EditarCliente = () => {
     register,
     handleSubmit,
     formState: { errors },
-    setValue
+    setValue,
   } = useForm();
   const { id } = useParams();
   console.log(id);
+
+  const onSubmit = (clienteActua) => {
+    
+    EditarClienteApi(id, clienteActua).then((respuesta) => {
+      if (respuesta.status === 200) {
+        Swal.fire("Producto Actualizado", "Actualizacion Correcta", "success");
+        navegacion("/administrar");
+      } else {
+        Swal.fire("Error inesperado", "Intente Nuevamente", "error");
+      }
+    });
+  };
+  const navegacion = useNavigate()
   return (
     <section className="bg-black">
       <Container>
@@ -37,7 +51,7 @@ const EditarCliente = () => {
           <hr />
         </div>
         <div>
-          <Form className="text-white" onClick={handleSubmit}>
+          <Form className="text-white" onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="inputNombre">
               <Form.Label>Nombre y Apellido</Form.Label>
               <Form.Control

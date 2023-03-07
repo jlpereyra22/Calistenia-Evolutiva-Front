@@ -26,10 +26,10 @@ export const AgregarClienteApi = async (cliente) => {
   }
 };
 
-export const BorrarClienteApi = async (id)=>{
+export const BorrarClienteApi = async (id) => {
   try {
-    const respuesta = await fetch(`${url}/${id}`,{
-      method:"DELETE"
+    const respuesta = await fetch(`${url}/${id}`, {
+      method: "DELETE",
     });
     return respuesta;
   } catch (error) {
@@ -37,15 +37,32 @@ export const BorrarClienteApi = async (id)=>{
   }
 };
 
-export const ObtenerClienteApi = async (id)=>{
+export const ObtenerClienteApi = async (id) => {
   try {
     const respuesta = await fetch(`${url}/${id}`);
     const clienteBuscado = {
       dato: await respuesta.json(),
-      status: respuesta.status
-    }
+      status: respuesta.status,
+    };
     return clienteBuscado;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
+
+export const EditarClienteApi = async (id,datosActualizados) => {
+  try {
+    const respuesta = await fetch(`${url}/${id}`,{
+      method:"PUT",
+      headers:{
+        "CONTENT-TYPE":"application/json"
+      },
+      body:JSON.stringify(datosActualizados)
+    });
+    return respuesta;
+   
+   
+  } catch (error) {
+    console.log(error);
+  }
+};
