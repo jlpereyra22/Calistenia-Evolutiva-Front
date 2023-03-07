@@ -3,24 +3,42 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const PagosCliente = () => {
+  const { register,handleSubmit, formState:{error}}= useForm();
+  const onSubmit = (datos)=>{
+    console.log(datos)
+  }
   return (
     <section className="bgGradient mainSection">
       <Container className="text-white">
         <div>
           <h2 className="text-center">Abono Mensual</h2>
           <hr />
-          <Form className="w-50 p-3">
+          <Form className="w-50 p-3" onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="inputDni">
               <Form.Label>Ingrese DNI</Form.Label>
-              <Form.Control type="number" placeholder="Ingrese un Dni...." />
+              <Form.Control type="number" placeholder="Ingrese un Dni...."
+              {
+                ...register("Dni",{
+                  required:"Ingrese un Dni Valido",
+                  minLength:{
+                    value:6,
+                    message:"El minimo de caracteres permitidos es 6"
+                  },
+                  maxLength:{
+                    value:8,
+                    message:"El maximo de caracteres permitidos es 8"
+                  }
+                })
+              } />
               <Form.Text className="text-warning">
                 Ingrese un dni valido
               </Form.Text>
             </Form.Group>
 
-            <Button variant="outline-success" type="button">
+            <Button variant="outline-success" type="submit">
               Buscar
             </Button>
           </Form>
