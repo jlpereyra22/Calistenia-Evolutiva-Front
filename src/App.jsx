@@ -9,7 +9,6 @@ import EditarCliente from "./components/views/socios/EditarCliente";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../src/app.css";
-import PagosCliente from "./components/views/socios/PagosCliente";
 import LoginUsser from "./components/views/LoginUsser";
 import CajaDiaria from "./components/views/cajas/CajaDiaria";
 import FormIngresoCaja from "./components/views/cajas/FormIngresoCaja";
@@ -29,7 +28,7 @@ function App() {
           element={<EditarCliente />}
         />
 
-        <Route exact path="/pagos" element={<PagosCliente />} />
+       
         <Route exact path="/loginUser" element={<LoginUsser />} />
         <Route exact path="/caja" element={<CajaDiaria/>} />
         <Route exact path="/caja/formCaja" element={<FormIngresoCaja/>} />

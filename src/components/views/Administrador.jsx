@@ -30,7 +30,7 @@ const Administrador = () => {
         <div>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Buscar Cliente</Form.Label>
               <Form.Control
                 value={clienteBuscado}
                 onChange={searcher}
@@ -42,9 +42,7 @@ const Administrador = () => {
               </Form.Text>
             </Form.Group>
 
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+           
           </Form>
         </div>
         <div>

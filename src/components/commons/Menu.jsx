@@ -5,7 +5,6 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link, NavLink } from "react-router-dom";
 import icono from "../img/icono.jpeg";
 
-
 const Menu = () => {
   return (
     <section className="bg-black">
@@ -25,10 +24,15 @@ const Menu = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-               <NavLink className="btn text-light" to="/pagos">Pagos</NavLink>
-               <NavLink className="btn text-light" to="/administrar">Administrar</NavLink>
-               <NavLink className="btn text-light" to="/loginUser">Login</NavLink>
-               <NavLink className="btn text-light" to="/caja">Caja Diaria</NavLink>
+                <NavLink className="btn text-light" to="/administrar">
+                  Administrar
+                </NavLink>
+                <NavLink className="btn text-light" to="/loginUser">
+                  Login
+                </NavLink>
+                <NavLink className="btn text-light" to="/caja">
+                  Caja Diaria
+                </NavLink>
               </Nav>
             </Navbar.Collapse>
           </Col>
