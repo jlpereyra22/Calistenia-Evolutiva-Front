@@ -50,19 +50,19 @@ export const ObtenerClienteApi = async (id) => {
   }
 };
 
-export const EditarClienteApi = async (id,datosActualizados) => {
+export const EditarClienteApi = async (id, datosActualizados) => {
   try {
-    const respuesta = await fetch(`${url}/${id}`,{
-      method:"PUT",
-      headers:{
-        "CONTENT-TYPE":"application/json"
+    const respuesta = await fetch(`${url}/${id}`, {
+      method: "PUT",
+      headers: {
+        "CONTENT-TYPE": "application/json",
       },
-      body:JSON.stringify(datosActualizados)
+      body: JSON.stringify(datosActualizados),
     });
     return respuesta;
-   
-   
   } catch (error) {
     console.log(error);
   }
 };
+
+

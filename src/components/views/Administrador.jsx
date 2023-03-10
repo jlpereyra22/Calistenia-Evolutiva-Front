@@ -2,23 +2,51 @@ import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
-
 import { Link } from "react-router-dom";
 import { consultarApiCliente } from "../helpers/queris";
 import TablaCliente from "./socios/TablaCliente";
-
+import Form from "react-bootstrap/Form";
 
 const Administrador = () => {
   const [clientes, setClientes] = useState([]);
+  const [clienteBuscado, setClienteBuscado] = useState("");
   useEffect(() => {
     consultarApiCliente().then((respuesta) => {
       setClientes(respuesta);
     });
   }, []);
+  
+  const searcher = (e) => {
+    setClienteBuscado(e.target.value);
+    console.log(e.target.value);
+  };
+ 
+  const results = !clienteBuscado ? clientes : clientes.filter((dato)=> dato.Nombre.toLowerCase().includes(clienteBuscado.toLocaleLowerCase()))
+
 
   return (
     <section className="bgGradient mainSection">
       <Container className="text-center p-5 text-white">
+        <div>
+          <Form>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                value={clienteBuscado}
+                onChange={searcher}
+                type="text"
+                placeholder="Enter email"
+              />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
+            </Form.Group>
+
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </div>
         <div>
           <h2>Administrador de Clientes</h2>
           <hr />
@@ -55,8 +83,12 @@ const Administrador = () => {
               </tr>
             </thead>
             <tbody>
-              {clientes.map((cliente) => (
-                <TablaCliente key={cliente.id} cliente={cliente}  setCliente={setClientes}/>
+              {results.map((cliente) => (
+                <TablaCliente
+                  key={cliente.id}
+                  cliente={cliente}
+                  setCliente={setClientes}
+                />
               ))}
             </tbody>
           </Table>

@@ -4,11 +4,28 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
+import { consultarApiCliente } from "../../helpers/queris";
+
 
 const PagosCliente = () => {
+  const [cliente, setCliente] = useState([])
+  const [clienteBus, setClienteBus] = useState("")
+ useEffect(() => {
+  consultarApiCliente().then((respuesta)=>{
+   setCliente(respuesta);
+   
+  })
+ }, [])
+ 
   const { register,handleSubmit, formState:{error}}= useForm();
+  
   const onSubmit = (datos)=>{
     console.log(datos)
+   const dni = datos
+   const clienteBuscado = cliente.find(cliente=>cliente.Dni ===dni)
+    console.log(clienteBuscado)
+    setClienteBus(clienteBuscado)
   }
   return (
     <section className="bgGradient mainSection">

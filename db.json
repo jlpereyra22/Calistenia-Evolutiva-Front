@@ -2,7 +2,7 @@
   "clientes": [
     {
       "Nombre": "pereyra jose luis",
-      "Dni": "33456598",
+      "Dni": "34286341",
       "Telefono": "3814564556",
       "Mail": "chueco@pereyra.com",
       "FNacimiento": "1990-06-21",
@@ -32,6 +32,17 @@
       "FPago": "5487-05-21",
       "Monto": "6000",
       "id": "AgmV8vj"
+    },
+    {
+      "Nombre": "German Yosepe",
+      "Dni": "45678932",
+      "Telefono": "65897321",
+      "Mail": "asdf@hgfd",
+      "FNacimiento": "123456-11-05",
+      "Estado": "Activo",
+      "FPago": "0498-05-21",
+      "Monto": "4500",
+      "id": "yyqA_Bz"
     }
   ]
 }
