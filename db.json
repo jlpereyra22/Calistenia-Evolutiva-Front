@@ -23,7 +23,7 @@
       "id": "M-uTaRx"
     },
     {
-      "Nombre": "Wanchneider Federico",
+      "Nombre": "Wanchneider Federico v2",
       "Dni": "12345698",
       "Telefono": "654879123",
       "Mail": "fede@fede",
@@ -43,6 +43,25 @@
       "FPago": "0498-05-21",
       "Monto": "4500",
       "id": "yyqA_Bz"
+    }
+  ],
+
+  "cajaDiaria":[
+    {
+      "Nombre":"Aguas Bashur",
+      "Operacion":"Egreso",
+      "Monto":"3200",
+      "Fecha":"13/03/2023",
+      "Operador":"tagrandeJuancho",
+      "id":"1"
+    },
+    {
+      "Nombre":"fede W",
+      "Operacion":"Ingreso",
+      "Monto":"4500",
+      "Fecha":"13/03/2023",
+      "Operador":"tagrandeJuancho",
+      "id":"2"
     }
   ]
 }

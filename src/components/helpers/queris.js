@@ -1,4 +1,7 @@
 const url = "http://localhost:3004/clientes";
+const urlCajaDiaria ="http://localhost:3004/cajaDiaria"
+
+//PETICIONES CLIENTES
 
 export const consultarApiCliente = async () => {
   try {
@@ -66,3 +69,4 @@ export const EditarClienteApi = async (id, datosActualizados) => {
 };
 
 
+//PETICIONES CAJA

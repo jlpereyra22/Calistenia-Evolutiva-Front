@@ -15,7 +15,7 @@ const CajaDiaria = () => {
               Asiento <i className="bi bi-plus-circle-fill"></i>
             </Link>
           </div>
-          <div>
+          <div className="table-responsive">
             <Table bordered hover size="sm" className="text-white">
               <thead>
                 <tr>
@@ -29,23 +29,7 @@ const CajaDiaria = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Aguas Bachur</td>
-                  <td>Egreso</td>
-                  <td>3000</td>
-                  <td>Fecha</td>
-                  <td>Hora</td>
-                  <td>Agustin</td>
-                  <td>
-              
-                    <Button variant="danger" className="m-1" size="sm">
-                      <i className="bi bi-bookmark-x-fill  text-white-50"></i>
-                    </Button>
-                    <Button variant="warning" className="m-1" size="sm">
-                      <i className="bi bi-pencil-square text-white-50"></i>
-                    </Button>
-                  </td>
-                </tr>
+               
               </tbody>
             </Table>
           </div>
