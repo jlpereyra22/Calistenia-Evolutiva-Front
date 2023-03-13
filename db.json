@@ -52,6 +52,7 @@
       "Operacion":"Egreso",
       "Monto":"3200",
       "Fecha":"13/03/2023",
+      "Hora":"20:30",
       "Operador":"tagrandeJuancho",
       "id":"1"
     },
@@ -60,6 +61,7 @@
       "Operacion":"Ingreso",
       "Monto":"4500",
       "Fecha":"13/03/2023",
+      "Hora":"21:30",
       "Operador":"tagrandeJuancho",
       "id":"2"
     }

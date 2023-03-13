@@ -70,3 +70,14 @@ export const EditarClienteApi = async (id, datosActualizados) => {
 
 
 //PETICIONES CAJA
+
+export const consultarApiCaja = async () => {
+  try {
+    const respuesta = await fetch(urlCajaDiaria);
+    const listaMovimientos = await respuesta.json();
+    console.log(listaMovimientos);
+    return listaMovimientos;
+  } catch (error) {
+    console.log(error);
+  }
+};

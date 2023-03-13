@@ -1,9 +1,19 @@
+import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import { Link } from "react-router-dom";
+import { consultarApiCaja } from "../../helpers/queris";
+import TablaCaja from "./TablaCaja";
 
 const CajaDiaria = () => {
+  const [cajaDiaria, setCajaDiaria] = useState([]);
+  useEffect(() => {
+   consultarApiCaja().then((respuesta)=>{
+    setCajaDiaria(respuesta);
+   })
+  }, [])
+  
   return (
     <section className="mainSection bgGradient">
       <Container className="text-center text-white my-3 ">
@@ -29,6 +39,9 @@ const CajaDiaria = () => {
                 </tr>
               </thead>
               <tbody>
+                {
+                  cajaDiaria.map((cajaDiaria)=><TablaCaja   key={cajaDiaria.id} caja={cajaDiaria}/>)
+                }
                
               </tbody>
             </Table>
