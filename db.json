@@ -45,25 +45,60 @@
       "id": "yyqA_Bz"
     }
   ],
-
-  "cajaDiaria":[
+  "cajaDiaria": [
     {
-      "Nombre":"Aguas Bashur",
-      "Operacion":"Egreso",
-      "Monto":"3200",
-      "Fecha":"13/03/2023",
-      "Hora":"20:30",
-      "Operador":"tagrandeJuancho",
-      "id":"1"
+      "Nombre": "Aguas Bashur",
+      "Operacion": "Egreso",
+      "Monto": "3200",
+      "Fecha": "13/03/2023",
+      "Hora": "20:30",
+      "Operador": "tagrandeJuancho",
+      "id": "1"
     },
     {
-      "Nombre":"fede W",
-      "Operacion":"Ingreso",
-      "Monto":"4500",
-      "Fecha":"13/03/2023",
-      "Hora":"21:30",
-      "Operador":"tagrandeJuancho",
-      "id":"2"
+      "Nombre": "fede W",
+      "Operacion": "Ingreso",
+      "Monto": "4500",
+      "Fecha": "13/03/2023",
+      "Hora": "21:30",
+      "Operador": "tagrandeJuancho",
+      "id": "2"
+    },
+    {
+      "Nombre": "Wanchneider Federico   ",
+      "Operacion": "Ingreso",
+      "Monto": "356",
+      "Fecha": "1202-06-21",
+      "Hora": "21:59",
+      "Operador": "ddsadasfcesdcfvesdv",
+      "id": "Due0EtN"
+    },
+    {
+      "Nombre": "Wanchneider Federico   ",
+      "Operacion": "Ingreso",
+      "Monto": "4500",
+      "Fecha": "1202-06-21",
+      "Hora": "21:59",
+      "Operador": "ddsadasfcesdcfvesdv",
+      "id": "0w4zaj2"
+    },
+    {
+      "Nombre": "Wanchneider Federico   ",
+      "Operacion": "Ingreso",
+      "Monto": "4500",
+      "Fecha": "1202-06-21",
+      "Hora": "21:59",
+      "Operador": "ddsadasfcesdcfvesdv",
+      "id": "Ozka54H"
+    },
+    {
+      "Nombre": "edet",
+      "Operacion": "Egreso",
+      "Monto": "18000",
+      "Fecha": "2023-03-13",
+      "Hora": "21:05",
+      "Operador": "dio mio",
+      "id": "zspm5yI"
     }
   ]
 }

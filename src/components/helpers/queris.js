@@ -81,3 +81,18 @@ export const consultarApiCaja = async () => {
     console.log(error);
   }
 };
+
+export const AgregarCajaApi = async (asiento) => {
+  try {
+    const respuesta = await fetch(urlCajaDiaria, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(asiento),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
