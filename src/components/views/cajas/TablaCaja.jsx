@@ -1,6 +1,36 @@
 import Button from "react-bootstrap/Button";
+import Swal from "sweetalert2";
+import { BorrarAsientoApi, consultarApiCaja } from "../../helpers/queris";
 
 const TablaCaja = (props) => {
+    const borrarAsiento = ()=>{
+        Swal.fire({
+            title: '¿Estas Seguro de borrar?',
+            text: "¡No podras revertir esta accion!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '¡Si, Borrar!',
+            cancelButtonText: '¡Cancelar!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              BorrarAsientoApi(props.caja.id).then((respuesta)=>{
+                if(respuesta.status===200){
+                  consultarApiCaja().then((respuesta)=>{
+                    props.setCaja(respuesta)
+                  })
+                  Swal.fire(
+                    '¡Eliminaste!',
+                    'Se elimino con exito el cliente',
+                    'success'
+                  )
+                }
+              })
+                }
+              })
+        console.log("desde mi funcion de borrado")
+    }
   return (
     <tr>
       <td>{props.caja.Nombre}</td>
@@ -10,7 +40,7 @@ const TablaCaja = (props) => {
       <td>{props.caja.Hora}</td>
       <td>{props.caja.Operador}</td>
       <td>
-        <Button variant="danger" className="m-1" size="sm">
+        <Button  onClick={borrarAsiento} variant="danger" className="m-1" size="sm">
           <i className="bi bi-bookmark-x-fill  text-white-50"></i>
         </Button>
         <Button variant="warning" className="m-1" size="sm">

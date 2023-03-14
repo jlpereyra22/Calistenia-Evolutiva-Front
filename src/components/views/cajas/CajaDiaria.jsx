@@ -40,7 +40,7 @@ const CajaDiaria = () => {
               </thead>
               <tbody>
                 {
-                  cajaDiaria.map((cajaDiaria)=><TablaCaja   key={cajaDiaria.id} caja={cajaDiaria}/>)
+                  cajaDiaria.map((cajaDiaria)=><TablaCaja   key={cajaDiaria.id} caja={cajaDiaria} setCaja={setCajaDiaria}/>)
                 }
                
               </tbody>

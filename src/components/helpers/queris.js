@@ -96,3 +96,14 @@ export const AgregarCajaApi = async (asiento) => {
     console.log(error);
   }
 };
+
+export const BorrarAsientoApi = async (id) => {
+  try {
+    const respuesta = await fetch(`${urlCajaDiaria}/${id}`, {
+      method: "DELETE",
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
