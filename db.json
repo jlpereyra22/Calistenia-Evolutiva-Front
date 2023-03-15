@@ -63,6 +63,15 @@
       "Hora": "19:11",
       "Operador": "german",
       "id": 2
+    },
+    {
+      "Nombre": "pereyra jose",
+      "Operacion": "Ingreso",
+      "Monto": "4500",
+      "Fecha": "2023-03-23",
+      "Hora": "22:28",
+      "Operador": "carflos",
+      "id": 3
     }
   ]
 }

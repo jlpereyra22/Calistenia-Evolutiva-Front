@@ -8,12 +8,21 @@ import TablaCaja from "./TablaCaja";
 
 const CajaDiaria = () => {
   const [cajaDiaria, setCajaDiaria] = useState([]);
+  const [cajaIngreso, setCajaIngreso] = useState([]);
+  const [cajaEgreso, setCajaEgreso] = useState([]);
   useEffect(() => {
    consultarApiCaja().then((respuesta)=>{
     setCajaDiaria(respuesta);
+   });
+   consultarApiCaja().then((respuesta)=>{
+    setCajaIngreso(respuesta.filter((ingreso)=>ingreso.Operacion ==="Ingreso"))
+   });
+   consultarApiCaja().then((respuesta)=>{
+setCajaEgreso(respuesta.filter((egreso)=>egreso.Operacion ==="Egreso"))
    })
   }, [])
-  
+  console.log(cajaIngreso);
+  console.log(cajaEgreso);
   return (
     <section className="mainSection bgGradient">
       <Container className="text-center text-white my-3 ">
