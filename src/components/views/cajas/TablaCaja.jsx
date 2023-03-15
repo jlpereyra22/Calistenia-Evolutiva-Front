@@ -1,4 +1,5 @@
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { BorrarAsientoApi, consultarApiCaja } from "../../helpers/queris";
 
@@ -43,9 +44,9 @@ const TablaCaja = (props) => {
         <Button  onClick={borrarAsiento} variant="danger" className="m-1" size="sm">
           <i className="bi bi-bookmark-x-fill  text-white-50"></i>
         </Button>
-        <Button variant="warning" className="m-1" size="sm">
+        <Link  className="m-1 btn btn-warning btn-sm" to={`/caja/formEditCaja/${props.caja.id}`}>
           <i className="bi bi-pencil-square text-white-50"></i>
-        </Button>
+        </Link>
       </td>
     </tr>
   );

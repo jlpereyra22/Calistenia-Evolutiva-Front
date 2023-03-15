@@ -47,40 +47,22 @@
   ],
   "cajaDiaria": [
     {
-      "Nombre": "Aguas Bashur",
+      "Nombre": "aguas bachur editado",
       "Operacion": "Egreso",
-      "Monto": "3200",
-      "Fecha": "13/03/2023",
-      "Hora": "20:30",
-      "Operador": "tagrandeJuancho",
-      "id": "1"
+      "Monto": "8500",
+      "Fecha": "2023-03-15",
+      "Hora": "19:10",
+      "Operador": "jose",
+      "id": 1
     },
     {
-      "Nombre": "fede W",
+      "Nombre": "wanchneider federico",
       "Operacion": "Ingreso",
-      "Monto": "4500",
-      "Fecha": "13/03/2023",
-      "Hora": "21:30",
-      "Operador": "tagrandeJuancho",
-      "id": "2"
-    },
-    {
-      "Nombre": "Wanchneider Federico   ",
-      "Operacion": "Ingreso",
-      "Monto": "356",
-      "Fecha": "1202-06-21",
-      "Hora": "21:59",
-      "Operador": "ddsadasfcesdcfvesdv",
-      "id": "Due0EtN"
-    },
-    {
-      "Nombre": "edet",
-      "Operacion": "Egreso",
-      "Monto": "18000",
-      "Fecha": "2023-03-13",
-      "Hora": "21:05",
-      "Operador": "dio mio",
-      "id": "zspm5yI"
+      "Monto": "45000",
+      "Fecha": "2023-03-15",
+      "Hora": "19:11",
+      "Operador": "german",
+      "id": 2
     }
   ]
 }

@@ -107,3 +107,31 @@ export const BorrarAsientoApi = async (id) => {
     console.log(error);
   }
 };
+
+export const ObtenerAsientoApi = async (id) => {
+  try {
+    const respuesta = await fetch(`${urlCajaDiaria}/${id}`);
+    const clienteBuscado = {
+      dato: await respuesta.json(),
+      status: respuesta.status,
+    };
+    return clienteBuscado;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const EditarAsientoApi = async (id, datosActualizados) => {
+  try {
+    const respuesta = await fetch(`${urlCajaDiaria}/${id}`, {
+      method: "PUT",
+      headers: {
+        "CONTENT-TYPE": "application/json",
+      },
+      body: JSON.stringify(datosActualizados),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};

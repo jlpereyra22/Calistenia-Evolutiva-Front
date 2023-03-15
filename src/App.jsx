@@ -12,6 +12,7 @@ import "../src/app.css";
 import LoginUsser from "./components/views/LoginUsser";
 import CajaDiaria from "./components/views/cajas/CajaDiaria";
 import FormIngresoCaja from "./components/views/cajas/FormIngresoCaja";
+import FormEditarCaja from "./components/views/cajas/FormEditarCaja";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="/loginUser" element={<LoginUsser />} />
         <Route exact path="/caja" element={<CajaDiaria/>} />
         <Route exact path="/caja/formCaja" element={<FormIngresoCaja/>} />
+        <Route exact path="/caja/formEditCaja/:id" element={<FormEditarCaja/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
