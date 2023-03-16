@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import { Link } from "react-router-dom";
 import { consultarApiCaja } from "../../helpers/queris";
@@ -26,9 +25,9 @@ setCajaEgreso(respuesta.filter((asiento)=>asiento.Operacion ==="Egreso"))
   
  
   
-  let reduce = cajaIngreso.reduce((acumulador, actual) => acumulador + actual.Monto, 0);
+  let sumaIngreso = cajaIngreso.reduce((acumulador, actual) => acumulador + actual.Monto, 0);
 
- console.log(reduce)
+ console.log(sumaIngreso)
 
  
   return (
