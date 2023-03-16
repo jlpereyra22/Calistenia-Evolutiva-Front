@@ -58,7 +58,7 @@
     {
       "Nombre": "wanchneider federico",
       "Operacion": "Ingreso",
-      "Monto": "45000",
+      "Monto": "1",
       "Fecha": "2023-03-15",
       "Hora": "19:11",
       "Operador": "german",
@@ -67,11 +67,20 @@
     {
       "Nombre": "pereyra jose",
       "Operacion": "Ingreso",
-      "Monto": "4500",
+      "Monto": "3",
       "Fecha": "2023-03-23",
       "Hora": "22:28",
       "Operador": "carflos",
       "id": 3
+    },
+    {
+      "Nombre": "edet",
+      "Operacion": "Egreso",
+      "Monto": "7500",
+      "Fecha": "2023-03-16",
+      "Hora": "19:40",
+      "Operador": "quien sabe",
+      "id": 4
     }
   ]
 }

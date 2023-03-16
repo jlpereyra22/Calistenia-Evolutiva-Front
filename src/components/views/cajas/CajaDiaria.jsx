@@ -15,14 +15,22 @@ const CajaDiaria = () => {
     setCajaDiaria(respuesta);
    });
    consultarApiCaja().then((respuesta)=>{
-    setCajaIngreso(respuesta.filter((ingreso)=>ingreso.Operacion ==="Ingreso"))
+    setCajaIngreso(respuesta.filter((asiento)=>asiento.Operacion ==="Ingreso"))
    });
    consultarApiCaja().then((respuesta)=>{
-setCajaEgreso(respuesta.filter((egreso)=>egreso.Operacion ==="Egreso"))
+setCajaEgreso(respuesta.filter((asiento)=>asiento.Operacion ==="Egreso"))
    })
   }, [])
   console.log(cajaIngreso);
   console.log(cajaEgreso);
+  
+ 
+  
+  let reduce = cajaIngreso.reduce((acumulador, actual) => acumulador + actual.Monto, 0);
+
+ console.log(reduce)
+
+ 
   return (
     <section className="mainSection bgGradient">
       <Container className="text-center text-white my-3 ">
