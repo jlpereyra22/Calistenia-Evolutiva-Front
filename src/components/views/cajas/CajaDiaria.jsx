@@ -9,6 +9,7 @@ const CajaDiaria = () => {
   const [cajaDiaria, setCajaDiaria] = useState([]);
   const [cajaIngreso, setCajaIngreso] = useState([]);
   const [cajaEgreso, setCajaEgreso] = useState([]);
+
   useEffect(() => {
    consultarApiCaja().then((respuesta)=>{
     setCajaDiaria(respuesta);
@@ -18,16 +19,24 @@ const CajaDiaria = () => {
    });
    consultarApiCaja().then((respuesta)=>{
 setCajaEgreso(respuesta.filter((asiento)=>asiento.Operacion ==="Egreso"))
-   })
+   });
+ 
   }, [])
-  console.log(cajaIngreso);
+
+ console.log(cajaIngreso);
   console.log(cajaEgreso);
   
- 
-  
   let sumaIngreso = cajaIngreso.reduce((acumulador, actual) => acumulador + actual.Monto, 0);
+  let sumaEgreso = cajaEgreso.reduce((acumulador, actual) => acumulador + actual.Monto, 0);
 
- console.log(sumaIngreso)
+  
+
+ console.log(sumaIngreso);
+ console.log(sumaEgreso);
+
+ const resultado = sumaIngreso-sumaEgreso;
+ console.log(resultado);
+ 
 
  
   return (
@@ -74,7 +83,7 @@ setCajaEgreso(respuesta.filter((asiento)=>asiento.Operacion ==="Egreso"))
               <thead>
                 <tr>
                   <th  className="fs-1">Total</th>
-                  <th className="text-warning fs-2" >$35000</th>
+                  <th className="text-warning fs-2" >${resultado}</th>
                 </tr>
               </thead>
             </Table>
