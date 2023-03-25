@@ -148,8 +148,8 @@ export const login = async (usuario)=>{
   try {
     const respuesta = await fetch(url_usser);
     const listaUsuarios= await respuesta.json();
-    const usuarioBuscado = listaUsuarios.find((itemUsuario)=>itemUsuario.email===usuario.email)
-    if (usuarioBuscado.password=== usuario.password) {
+    const usuarioBuscado = listaUsuarios.find((itemUsuario)=>itemUsuario.Usuario===usuario.Usuario)
+    if (usuarioBuscado.Contraseña=== usuario.Contraseña) {
       return usuarioBuscado;
     } else {
       console.log("Usuario inexistente")
