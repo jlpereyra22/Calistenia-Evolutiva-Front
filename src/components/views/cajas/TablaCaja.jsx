@@ -16,7 +16,7 @@ const TablaCaja = (props) => {
             cancelButtonText: '¡Cancelar!'
           }).then((result) => {
             if (result.isConfirmed) {
-              BorrarAsientoApi(props.caja.id).then((respuesta)=>{
+              BorrarAsientoApi(props.caja._id).then((respuesta)=>{
                 if(respuesta.status===200){
                   consultarApiCaja().then((respuesta)=>{
                     props.setCaja(respuesta)
