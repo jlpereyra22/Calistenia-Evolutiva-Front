@@ -2,10 +2,17 @@ import { Col } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import icono from "../img/icono.jpeg";
+import Button from "react-bootstrap/Button";
 
-const Menu = () => {
+const Menu = (props) => {
+  const navegacion = useNavigate();
+  const logout = () => {
+    localStorage.removeItem("tokenUsuario");
+    props.setUsuarioLogueado({});
+    navegacion("/");
+  };
   return (
     <section className="bg-black">
       <Container className="p-3">
@@ -21,19 +28,26 @@ const Menu = () => {
             </Navbar.Brand>
           </Col>
           <Col lg={5}>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto">
+            {props.UsuarioLogueado.Usuario ? (
+              <>
                 <NavLink className="btn text-light" to="/administrar">
                   Administrar
-                </NavLink>
-                <NavLink className="btn text-light" to="/loginUser">
-                  Login
                 </NavLink>
                 <NavLink className="btn text-light" to="/caja">
                   Caja Diaria
                 </NavLink>
-              </Nav>
+                <Button variant="danger" onClick={logout}>
+                  LogOut
+                </Button>
+              </>
+            ) : (
+              <NavLink className="btn text-light" to="/loginUser">
+                Login
+              </NavLink>
+            )}
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto"></Nav>
             </Navbar.Collapse>
           </Col>
         </Navbar>

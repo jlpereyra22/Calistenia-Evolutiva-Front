@@ -1,9 +1,13 @@
 //const Json.server
 //const url = "http://localhost:3004/clientes";
 //const urlCajaDiaria ="http://localhost:3004/cajaDiaria"
-//const mongoLocal
+
+
+//const mongo Local
 const url = "http://localhost:4000/calistenia/clientes";
 const urlCajaDiaria = "http://localhost:4000/calistenia/cajaDiaria";
+const url_usser = "http://localhost:4000/calistenia/usser"
+
 //PETICIONES CLIENTES
 
 export const consultarApiCliente = async () => {
@@ -137,3 +141,22 @@ export const EditarAsientoApi = async (id, datosActualizados) => {
     console.log(error);
   }
 };
+
+//PETICIONES USUARIO  
+
+export const login = async (usuario)=>{
+  try {
+    const respuesta = await fetch(url_usser);
+    const listaUsuarios= await respuesta.json();
+    const usuarioBuscado = listaUsuarios.find((itemUsuario)=>itemUsuario.email===usuario.email)
+    if (usuarioBuscado.password=== usuario.password) {
+      return usuarioBuscado;
+    } else {
+      console.log("Usuario inexistente")
+      return
+    }
+  } catch (error) {
+    console.log(error)
+    return
+  }
+}

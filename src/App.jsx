@@ -13,11 +13,14 @@ import LoginUsser from "./components/views/LoginUsser";
 import CajaDiaria from "./components/views/cajas/CajaDiaria";
 import FormIngresoCaja from "./components/views/cajas/FormIngresoCaja";
 import FormEditarCaja from "./components/views/cajas/FormEditarCaja";
+import { useState } from "react";
 
 function App() {
+  const usuario= JSON.parse(localStorage.getItem("tokenUsuario"))|| {}
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario)
   return (
     <BrowserRouter>
-      <Menu />
+      <Menu UsuarioLogueado={usuarioLogueado}  setUsuarioLogueado={setUsuarioLogueado}/>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/administrar" element={<Administrador />} />
@@ -28,9 +31,8 @@ function App() {
           path="/administrar/editarcliente/:id"
           element={<EditarCliente />}
         />
-
-       
-        <Route exact path="/loginUser" element={<LoginUsser />} />
+      
+        <Route exact path="/loginUser" element={<LoginUsser setUsuarioLogueado={setUsuarioLogueado} />} />
         <Route exact path="/caja" element={<CajaDiaria/>} />
         <Route exact path="/caja/formCaja" element={<FormIngresoCaja/>} />
         <Route exact path="/caja/formEditCaja/:id" element={<FormEditarCaja/>} />
