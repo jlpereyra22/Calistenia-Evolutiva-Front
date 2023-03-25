@@ -1,6 +1,9 @@
-const url = "http://localhost:3004/clientes";
-const urlCajaDiaria ="http://localhost:3004/cajaDiaria"
-
+//const Json.server
+//const url = "http://localhost:3004/clientes";
+//const urlCajaDiaria ="http://localhost:3004/cajaDiaria"
+//const mongoLocal
+const url = "http://localhost:4000/calistenia/clientes";
+const urlCajaDiaria = "http://localhost:4000/calistenia/cajaDiaria";
 //PETICIONES CLIENTES
 
 export const consultarApiCliente = async () => {
@@ -53,9 +56,9 @@ export const ObtenerClienteApi = async (id) => {
   }
 };
 
-export const EditarClienteApi = async (id, datosActualizados) => {
+export const EditarClienteApi = async (_id, datosActualizados) => {
   try {
-    const respuesta = await fetch(`${url}/${id}`, {
+    const respuesta = await fetch(`${url}/${_id}`, {
       method: "PUT",
       headers: {
         "CONTENT-TYPE": "application/json",
@@ -67,7 +70,6 @@ export const EditarClienteApi = async (id, datosActualizados) => {
     console.log(error);
   }
 };
-
 
 //PETICIONES CAJA
 

@@ -83,7 +83,8 @@ const Administrador = () => {
             <tbody>
               {results.map((cliente) => (
                 <TablaCliente
-                  key={cliente.id}
+                  key={cliente.
+                    _id}
                   cliente={cliente}
                   setCliente={setClientes}
                 />

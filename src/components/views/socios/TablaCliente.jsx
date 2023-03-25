@@ -17,7 +17,7 @@ const TablaCliente = (props) => {
       cancelButtonText: '¡Cancelar!'
     }).then((result) => {
       if (result.isConfirmed) {
-        BorrarClienteApi(props.cliente.id).then((respuesta)=>{
+        BorrarClienteApi(props.cliente._id).then((respuesta)=>{
           if(respuesta.status===200){
             consultarApiCliente().then((respuesta)=>{
               props.setCliente(respuesta)
@@ -47,7 +47,7 @@ const TablaCliente = (props) => {
           <Button variant="danger" className="m-1" size="sm" onClick={borrarCliente}>
             <i className="bi bi-bookmark-x-fill  text-white-50"></i>
           </Button>
-          <Link  className="m-1 btn btn-warning btn-sm" to={`/administrar/editarcliente/${props.cliente.id}`}>
+          <Link  className="m-1 btn btn-warning btn-sm" to={`/administrar/editarcliente/${props.cliente._id}`}>
             <i className="bi bi-pencil-square text-white-50"></i>
           </Link>
         </td>
