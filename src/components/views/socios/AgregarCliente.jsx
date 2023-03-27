@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { AgregarClienteApi } from "../../helpers/queris";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const AgregarCliente = () => {
   const {
@@ -15,17 +16,25 @@ const AgregarCliente = () => {
 
   const onSubmit = (datos) => {
     console.log(datos);
-    AgregarClienteApi(datos).then((respuesta)=>{
-      if (respuesta.status===201) {
-        Swal.fire("Cliente Agregado","El cliente fue agregado con exito","success");
-navegacion("/administrar")
+    AgregarClienteApi(datos).then((respuesta) => {
+      if (respuesta.status === 201) {
+        Swal.fire(
+          "Cliente Agregado",
+          "El cliente fue agregado con exito",
+          "success"
+        );
+        navegacion("/administrar");
       } else {
-        Swal.fire("Ocurrio un Error","La solicitud no pudo ser procesada, intente nuevamente","error")
+        Swal.fire(
+          "Ocurrio un Error",
+          "La solicitud no pudo ser procesada, intente nuevamente",
+          "error"
+        );
       }
-    })
+    });
     console.log("Desde Nuestra funcion onSubmit");
   };
-const navegacion = useNavigate()
+  const navegacion = useNavigate();
   return (
     <section className="bg-black">
       <Container>
@@ -121,16 +130,14 @@ const navegacion = useNavigate()
                 {errors.Mail?.message}
               </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="inputFechaN">
+            <Form.Group className="mb-3" controlId="inputFNacimiento">
               <Form.Label>Fecha de Nacimiento</Form.Label>
               <Form.Control
                 type="date"
                 placeholder="Ingrese fecha de nacimiento"
-                {...register("FNacimiento",{
-                  required:"La fecha de nacimiento es un datro requerido"
-                })
-
-                }
+                {...register("FNacimiento", {
+                  required: "La fecha de nacimiento es un datro requerido",
+                })}
               />
               <Form.Text className="text-warning">
                 {errors.FNacimiento?.message}
@@ -138,48 +145,50 @@ const navegacion = useNavigate()
             </Form.Group>
             <Form.Group className="mb-3" controlId="inputMembresia">
               <Form.Label>Estado de Membresia</Form.Label>
-              <Form.Select aria-label="Estado de Membresia" 
-              {...register("Estado",{
-                required:"Este es un dato obligatorio"
-              })
-
-              }>
+              <Form.Select
+                aria-label="Estado de Membresia"
+                {...register("Estado", {
+                  required: "Este es un dato obligatorio",
+                })}
+              >
                 <option value="">Estado</option>
                 <option value="Activo">Activo</option>
                 <option value="Baja">Baja</option>
               </Form.Select>
               <Form.Text className="text-warning">
-               {errors.Estado?.message}
+                {errors.Estado?.message}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="inputFechaIngreso">
               <Form.Label>Fecha de Ingreso</Form.Label>
-              <Form.Control type="date" placeholder="Fecha de pago" 
-              {...register("FPago",{
-                required:"Este es un dato obligatorio"
-              })
-              
-              }/>
+              <Form.Control
+                type="date"
+                placeholder="Fecha de pago"
+                {...register("FPago", {
+                  required: "Este es un dato obligatorio",
+                })}
+              />
               <Form.Text className="text-warning">
                 {errors.FPago?.message}
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="inputFechaIngreso">
               <Form.Label>Monto</Form.Label>
-              <Form.Control type="number" placeholder="Monto del pago" 
-              {...register("Monto",{
-                required:"Este es un dato obligatorio",
-                minLength:{
-                  value:1,
-                  message:"La cantidad minimas de caracteres es 1"
-                },
-                maxLength:{
-                  value:5,
-                  message:"La cantidad maxima de caracteres es 5"
-                }
-              })
-              
-              }/>
+              <Form.Control
+                type="number"
+                placeholder="Monto del pago"
+                {...register("Monto", {
+                  required: "Este es un dato obligatorio",
+                  minLength: {
+                    value: 1,
+                    message: "La cantidad minimas de caracteres es 1",
+                  },
+                  maxLength: {
+                    value: 5,
+                    message: "La cantidad maxima de caracteres es 5",
+                  },
+                })}
+              />
               <Form.Text className="text-warning">
                 {errors.Monto?.message}
               </Form.Text>

@@ -18,6 +18,8 @@ import { useState } from "react";
 function App() {
   const usuario= JSON.parse(localStorage.getItem("tokenUsuario"))|| {}
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario)
+ 
+ 
   return (
     <BrowserRouter>
       <Menu UsuarioLogueado={usuarioLogueado}  setUsuarioLogueado={setUsuarioLogueado}/>
