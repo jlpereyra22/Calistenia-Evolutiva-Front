@@ -53,7 +53,7 @@ const CajaDiaria = () => {
           <div className="text-end my-5">
             <Link
               className="m-3 btn btn-outline-success fs-4"
-              to="/caja/formCaja"
+              to="administrar/formCaja"
             >
               Asiento <i className="bi bi-plus-circle-fill"></i>
             </Link>

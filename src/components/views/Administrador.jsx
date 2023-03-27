@@ -56,7 +56,7 @@ const Administrador = () => {
           <Link
             className="m-3 btn btn-outline-success"
             size="sm"
-            to="/agregarcliente"
+            to="administrar/agregarcliente"
           >
             Agregar Cliente
           </Link>

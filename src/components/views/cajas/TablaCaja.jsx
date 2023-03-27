@@ -44,7 +44,7 @@ const TablaCaja = (props) => {
         <Button  onClick={borrarAsiento} variant="danger" className="m-1" size="sm">
           <i className="bi bi-bookmark-x-fill  text-white-50"></i>
         </Button>
-        <Link  className="m-1 btn btn-warning btn-sm" to={`/caja/formEditCaja/${props.caja._id}`}>
+        <Link  className="m-1 btn btn-warning btn-sm" to={`administrar/formEditCaja/${props.caja._id}`}>
           <i className="bi bi-pencil-square text-white-50"></i>
         </Link>
       </td>

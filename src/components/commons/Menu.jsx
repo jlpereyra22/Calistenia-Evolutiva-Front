@@ -33,7 +33,7 @@ const Menu = (props) => {
                 <NavLink className="btn text-light" to="/administrar">
                   Administrar
                 </NavLink>
-                <NavLink className="btn text-light" to="/caja">
+                <NavLink className="btn text-light" to="administrar/caja">
                   Caja Diaria
                 </NavLink>
                 <Button variant="danger" onClick={logout}>
