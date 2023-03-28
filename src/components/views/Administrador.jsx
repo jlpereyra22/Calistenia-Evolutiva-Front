@@ -26,33 +26,31 @@ const Administrador = () => {
 
   return (
     <section className="bgGradient mainSection">
-      <Container className="text-center p-5 text-white">
+      <Container className="text-center p-5 text-white font">
         <div>
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Buscar Cliente</Form.Label>
+          
+        </div>
+        <div>
+          <h2>Administrador de Clientes</h2>
+          <hr />
+          <Form className="text-start m-2 fs-5">
+            <Form.Group className="mb-3 " controlId="formBasicEmail">
+              <Form.Label >Buscar Cliente</Form.Label>
               <Form.Control
                 value={clienteBuscado}
                 onChange={searcher}
                 type="text"
-                placeholder="Enter email"
+                placeholder="Ingrese el Nombre"
+                className="inputSearch"
               />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
+             
             </Form.Group>
 
            
           </Form>
         </div>
-        <div>
-          <h2>Administrador de Clientes</h2>
-          <hr />
-        </div>
         <div className="d-flex justify-content-end">
-          <Button variant="outline-success" className="m-3" size="sm">
-            Agregar Administrador
-          </Button>
+          
           <Link
             className="m-3 btn btn-outline-success"
             size="sm"
@@ -64,9 +62,10 @@ const Administrador = () => {
         <div>
           <h3>Tabla de Miembros</h3>
           <hr />
+         
         </div>
         <div className="table-responsive">
-          <Table bordered hover size="sm" className="text-white">
+          <Table bordered hover size="sm" className="text-white  colorTable" variant="dark" >
             <thead>
               <tr>
                 <th>Nombre</th>

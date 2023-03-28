@@ -34,7 +34,7 @@ const TablaCliente = (props) => {
        
   }
     return (
-        <tr>
+        <tr >
         <td>{props.cliente.Nombre}</td>
         <td>{props.cliente.Dni}</td>
         <td>{props.cliente.Telefono}</td>
