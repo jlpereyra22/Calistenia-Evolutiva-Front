@@ -36,7 +36,7 @@ const FormEditarCaja = () => {
     EditarAsientoApi(id,datos).then((respuesta)=>{
         if (respuesta.status === 200) {
             Swal.fire("Asiendo Editado","El asiento fue modificado con exito","success");
-            navegacion("/caja");
+            navegacion("/administrar/caja");
         } else {
             Swal.fire("Error inesperado","intentelo mas tarde","error");
         }

@@ -17,7 +17,7 @@ const FormIngresoCaja = () => {
     AgregarCajaApi(datos).then((respuesta)=>{
       if (respuesta.status === 201) {
         Swal.fire("Asiento generado", "Asiento generado Correctamente", "success");
-        navegacion("/caja")
+        navegacion("/administrar/caja")
       } else {
         Swal.fire("Error inesperado", "Intente Nuevamente", "error");
       }

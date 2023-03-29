@@ -65,7 +65,7 @@ const Administrador = () => {
          
         </div>
         <div className="table-responsive">
-          <Table bordered hover size="sm" className="text-white  colorTable" variant="dark" >
+          <Table bordered hover size="sm" className="text-white " variant="dark" >
             <thead>
               <tr>
                 <th>Nombre</th>

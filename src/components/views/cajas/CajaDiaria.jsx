@@ -46,7 +46,7 @@ const CajaDiaria = () => {
 
   return (
     <section className="mainSection bgGradient">
-      <Container className="text-center text-white my-3 ">
+      <Container className="text-center text-white my-3 font">
         <div>
           <h2>Caja Diaria</h2>
           <hr />
@@ -59,7 +59,7 @@ const CajaDiaria = () => {
             </Link>
           </div>
           <div className="table-responsive">
-            <Table bordered hover size="sm" className="text-white">
+            <Table bordered hover size="sm" className="text-white " variant="dark">
               <thead>
                 <tr>
                   <th>Nombre</th>
@@ -83,17 +83,17 @@ const CajaDiaria = () => {
             </Table>
           </div>
 
-          <div>
+          <div  > 
             <Table
               bordered
               hover
               size="lg"
-              className="text-white d-flex flex-row-reverse "
+              className="text-white d-flex flex-row-reverse  "
             >
               <thead>
                 <tr>
-                  <th className="fs-1">Total</th>
-                  <th className="text-warning fs-2">${resultado}</th>
+                  <th className="fs-3">Total</th>
+                  <th className="text-warning fs-3">${resultado}</th>
                 </tr>
               </thead>
             </Table>

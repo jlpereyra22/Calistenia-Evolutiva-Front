@@ -109,7 +109,7 @@ const AgregarCliente = () => {
               </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="inputEmail">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email </Form.Label>
               <Form.Control
                 type="mail"
                 placeholder="Ingrese Mail..."
@@ -172,7 +172,7 @@ const AgregarCliente = () => {
                 {errors.FPago?.message}
               </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="inputFechaIngreso">
+            <Form.Group className="mb-3" controlId="inputMonto">
               <Form.Label>Monto</Form.Label>
               <Form.Control
                 type="number"
