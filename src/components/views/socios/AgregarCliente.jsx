@@ -36,14 +36,14 @@ const AgregarCliente = () => {
   };
   const navegacion = useNavigate();
   return (
-    <section className="bg-black">
+    <section className="bg-black font">
       <Container>
         <div className="text-center text-white">
           <h2>Agregar Cliente </h2>
           <hr />
         </div>
         <div>
-          <Form className="text-white" onClick={handleSubmit(onSubmit)}>
+          <Form className="text-success" onClick={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="inputNombre">
               <Form.Label>Nombre y Apellido</Form.Label>
               <Form.Control

@@ -14,7 +14,7 @@ const Menu = (props) => {
     navegacion("/");
   };
   return (
-    <section className="bg-black">
+    <section className="bg-black font">
       <Container className="p-3">
         <Navbar
           bg="black"
@@ -30,18 +30,18 @@ const Menu = (props) => {
           <Col lg={5}>
             {props.UsuarioLogueado.Usuario ? (
               <>
-                <NavLink className="btn text-light" to="/administrar">
+                <NavLink className="btn text-light m-1" to="/administrar">
                   Administrar
                 </NavLink>
-                <NavLink className="btn text-light" to="administrar/caja">
+                <NavLink className="btn text-light m-1" to="administrar/caja">
                   Caja Diaria
                 </NavLink>
-                <Button variant="danger" onClick={logout}>
+                <Button variant="outline-danger" className="m-1" onClick={logout}>
                   LogOut
                 </Button>
               </>
             ) : (
-              <NavLink className="btn text-light" to="/loginUser">
+              <NavLink className="btn btn-outline-success " to="/loginUser">
                 Login
               </NavLink>
             )}

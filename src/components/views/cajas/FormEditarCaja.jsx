@@ -49,14 +49,14 @@ const FormEditarCaja = () => {
   console.log(id);
   const navegacion = useNavigate()
   return (
-    <section className="mainSection bgGradient">
+    <section className="mainSection bgGradient font">
       <Container>
         <div className="text-center text-white">
           <h2>Asiento Diario</h2>
           <hr />
         </div>
         <div>
-          <Form className="text-white" onSubmit={handleSubmit(onSubmit)}>
+          <Form className="text-success" onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formNombre">
               <Form.Label>Nombre</Form.Label>
               <Form.Control

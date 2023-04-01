@@ -30,11 +30,11 @@ const LoginUsser = (props) => {
 
  
   return (
-    <section className="mainSection bg-black d-flex flex-column justify-content-center">
-      <Container className=" text-white  p-2">
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          <Form.Group controlId="EmailUsser">
-            <Form.Label>Email de Usuario</Form.Label>
+    <section className="mainSection bg-black d-flex flex-column justify-content-center font">
+      <Container className=" text-white  p-2 d-flex justify-content-center text-center">
+        <Form onSubmit={handleSubmit(onSubmit)} className="inputLogin">
+          <Form.Group controlId="EmailUsser" className="m-3">
+            <Form.Label className="text-success">Email de Usuario</Form.Label>
             <Form.Control
               type="text"
               placeholder="Ingrese su Email"
@@ -55,8 +55,8 @@ const LoginUsser = (props) => {
             </Form.Text>
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="ContraseñaUsser">
-            <Form.Label>Contraseña</Form.Label>
+          <Form.Group className="m-3" controlId="ContraseñaUsser">
+            <Form.Label className="text-success">Contraseña</Form.Label>
             <Form.Control
               type="password"
               placeholder="Ingrese su Contraseña"
@@ -77,8 +77,8 @@ const LoginUsser = (props) => {
             </Form.Text>
           </Form.Group>
 
-          <Button variant="outline-success" type="submit">
-            LogIn
+          <Button variant="outline-success" type="submit" className="m-3">
+            Ingresar
           </Button>
         </Form>
       </Container>

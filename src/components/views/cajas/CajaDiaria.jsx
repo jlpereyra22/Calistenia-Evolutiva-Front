@@ -45,7 +45,7 @@ const CajaDiaria = () => {
   console.log(resultado);
 
   return (
-    <section className="mainSection bgGradient">
+    <section className="mainSection bgGradient font">
       <Container className="text-center text-white my-3 font">
         <div>
           <h2>Caja Diaria</h2>

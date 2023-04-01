@@ -25,8 +25,8 @@ const Administrador = () => {
 
 
   return (
-    <section className="bgGradient mainSection">
-      <Container className="text-center p-5 text-white font">
+    <section className="bgGradient mainSection font">
+      <Container className="text-center p-5 text-white">
         <div>
           
         </div>
@@ -35,7 +35,7 @@ const Administrador = () => {
           <hr />
           <Form className="text-start m-2 fs-5">
             <Form.Group className="mb-3 " controlId="formBasicEmail">
-              <Form.Label >Buscar Cliente</Form.Label>
+              <Form.Label className="text-success">Buscar Cliente</Form.Label>
               <Form.Control
                 value={clienteBuscado}
                 onChange={searcher}
