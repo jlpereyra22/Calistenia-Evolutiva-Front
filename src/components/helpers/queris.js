@@ -2,11 +2,13 @@
 //const url = "http://localhost:3004/clientes";
 //const urlCajaDiaria ="http://localhost:3004/cajaDiaria"
 
-
 //const mongo Local
-const url = "http://localhost:4000/calistenia/clientes";
-const urlCajaDiaria = "http://localhost:4000/calistenia/cajaDiaria";
-const url_usser = "http://localhost:4000/calistenia/usser"
+const url = process.env.REACT_APP_API_CALISTENIA_CLIENTES;
+console.log(url)
+const urlCajaDiaria =process.env.REACT_APP_API_CALISTENIA_CAJADIARIA;
+console.log(urlCajaDiaria)
+const url_usser = process.env.REACT_APP_API_CALISTENIA_USSER;
+console.log(url_usser)
 
 //PETICIONES CLIENTES
 
