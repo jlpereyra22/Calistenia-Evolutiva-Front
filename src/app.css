@@ -38,3 +38,15 @@ background-image: linear-gradient(317deg, #0e0109 0%, #000000 50%, #000008 100%)
     width: 100%;
   }
 }
+
+.font{
+  font-family: 'Alkatra', cursive;
+}
+
+.inputSearch{
+  width: 45%;
+}
+
+.inputLogin{
+  width: 50%;
+}

@@ -9,30 +9,38 @@ import EditarCliente from "./components/views/socios/EditarCliente";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../src/app.css";
-import PagosCliente from "./components/views/socios/PagosCliente";
 import LoginUsser from "./components/views/LoginUsser";
-import CajaDiaria from "./components/views/cajas/CajaDiaria";
-import FormIngresoCaja from "./components/views/cajas/FormIngresoCaja";
+
+import { useState } from "react";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasAdmin from "./components/routes/RutasAdmin";
 
 function App() {
+  const usuario = JSON.parse(localStorage.getItem("tokenUsuario")) || {};
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+
   return (
     <BrowserRouter>
-      <Menu />
+      <Menu
+        UsuarioLogueado={usuarioLogueado}
+        setUsuarioLogueado={setUsuarioLogueado}
+      />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/administrar" element={<Administrador />} />
+
         <Route exact path="*" element={<Error404 />} />
-        <Route exact path="/agregarcliente" element={<AgregarCliente />} />
+
         <Route
           exact
-          path="/administrar/editarcliente/:id"
-          element={<EditarCliente />}
+          path="/loginUser"
+          element={<LoginUsser setUsuarioLogueado={setUsuarioLogueado} />}
         />
 
-        <Route exact path="/pagos" element={<PagosCliente />} />
-        <Route exact path="/loginUser" element={<LoginUsser />} />
-        <Route exact path="/caja" element={<CajaDiaria/>} />
-        <Route exact path="/caja/formCaja" element={<FormIngresoCaja/>} />
+        <Route exact path="administrar/*" element={
+          <RutasProtegidas>
+            <RutasAdmin/>
+          </RutasProtegidas>
+        }/>
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -1,30 +1,71 @@
+import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import { Link } from "react-router-dom";
+import { consultarApiCliente } from "../helpers/queris";
+import TablaCliente from "./socios/TablaCliente";
+import Form from "react-bootstrap/Form";
 
 const Administrador = () => {
+  const [clientes, setClientes] = useState([]);
+  const [clienteBuscado, setClienteBuscado] = useState("");
+  useEffect(() => {
+    consultarApiCliente().then((respuesta) => {
+      setClientes(respuesta);
+    });
+  }, []);
+  
+  const searcher = (e) => {
+    setClienteBuscado(e.target.value);
+    console.log(e.target.value);
+  };
+ 
+  const results = !clienteBuscado ? clientes : clientes.filter((dato)=> dato.Nombre.toLowerCase().includes(clienteBuscado.toLocaleLowerCase()))
+
+
   return (
-    <section className="bgGradient mainSection">
+    <section className="bgGradient mainSection font">
       <Container className="text-center p-5 text-white">
+        <div>
+          
+        </div>
         <div>
           <h2>Administrador de Clientes</h2>
           <hr />
+          <Form className="text-start m-2 fs-5">
+            <Form.Group className="mb-3 " controlId="formBasicEmail">
+              <Form.Label className="text-success">Buscar Cliente</Form.Label>
+              <Form.Control
+                value={clienteBuscado}
+                onChange={searcher}
+                type="text"
+                placeholder="Ingrese el Nombre"
+                className="inputSearch"
+              />
+             
+            </Form.Group>
+
+           
+          </Form>
         </div>
         <div className="d-flex justify-content-end">
-          <Button variant="outline-success" className="m-3" size="sm">
-            Agregar Administrador
-          </Button>
-          <Link  className="m-3 btn btn-outline-success" size="sm" to="/agregarcliente">
+          
+          <Link
+            className="m-3 btn btn-outline-success"
+            size="sm"
+            to="administrar/agregarcliente"
+          >
             Agregar Cliente
           </Link>
         </div>
         <div>
           <h3>Tabla de Miembros</h3>
           <hr />
+         
         </div>
         <div className="table-responsive">
-          <Table bordered hover size="sm" className="text-white">
+          <Table bordered hover size="sm" className="text-white " variant="dark" >
             <thead>
               <tr>
                 <th>Nombre</th>
@@ -34,78 +75,19 @@ const Administrador = () => {
                 <th>F.Nacimiento</th>
                 <th>Estado</th>
                 <th>Pago</th>
+                <th>Monto</th>
                 <th>Editar</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Subejo 1</td>
-                <td>11111111</td>
-                <td>42440007</td>
-                <td>ejemplo@ejemplo.com</td>
-                <td>01/01/2099</td>
-                <td>Activo</td>
-                <td>15/02/2023</td>
-                <td>
-                  <Button variant="danger" className="m-1" size="sm">
-                    <i className="bi bi-bookmark-x-fill  text-white-50"></i>
-                  </Button>
-                  <Button variant="warning" className="m-1" size="sm">
-                    <i className="bi bi-pencil-square text-white-50"></i>
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-                <td>Subejo 2</td>
-                <td>11111111</td>
-                <td>42440007</td>
-                <td>ejemplo@ejemplo.com</td>
-                <td>01/01/2099</td>
-                <td>Activo</td>
-                <td>15/02/2023</td>
-                <td>
-                  <Button variant="danger" className="m-1" size="sm">
-                    <i className="bi bi-bookmark-x-fill  text-white-50"></i>
-                  </Button>
-                  <Button variant="warning" className="m-1" size="sm">
-                    <i className="bi bi-pencil-square text-white-50"></i>
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-                <td>Subejo 3</td>
-                <td>11111111</td>
-                <td>42440007</td>
-                <td>ejemplo@ejemplo.com</td>
-                <td>01/01/2099</td>
-                <td>Activo</td>
-                <td>15/02/2023</td>
-                <td>
-                  <Button variant="danger" className="m-1" size="sm">
-                    <i className="bi bi-bookmark-x-fill  text-white-50"></i>
-                  </Button>
-                  <Button variant="warning" className="m-1" size="sm">
-                    <i className="bi bi-pencil-square text-white-50"></i>
-                  </Button>
-                </td>
-              </tr>
-              <tr>
-                <td>Subejo 4</td>
-                <td>11111111</td>
-                <td>42440007</td>
-                <td>ejemplo@ejemplo.com</td>
-                <td>01/01/2099</td>
-                <td>Activo</td>
-                <td>15/02/2023</td>
-                <td>
-                  <Button variant="danger" className="m-1" size="sm">
-                    <i className="bi bi-bookmark-x-fill  text-white-50"></i>
-                  </Button>
-                  <Button variant="warning" className="m-1" size="sm">
-                    <i className="bi bi-pencil-square text-white-50"></i>
-                  </Button>
-                </td>
-              </tr>
+              {results.map((cliente) => (
+                <TablaCliente
+                  key={cliente.
+                    _id}
+                  cliente={cliente}
+                  setCliente={setClientes}
+                />
+              ))}
             </tbody>
           </Table>
         </div>

@@ -1,28 +1,52 @@
+import { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import { AgregarCajaApi } from "../../helpers/queris";
+import { EditarAsientoApi, ObtenerAsientoApi } from "../../helpers/queris";
 
-const FormIngresoCaja = () => {
+const FormEditarCaja = () => {
+    useEffect(() => {
+     ObtenerAsientoApi(id).then((respuesta)=>{
+        if (respuesta.status === 200) {
+            console.log(respuesta);
+            setValue("Nombre", respuesta.dato.Nombre);
+            setValue("Operacion", respuesta.dato.Operacion);
+            setValue("Monto", respuesta.dato.Monto);
+            setValue("Fecha", respuesta.dato.Fecha);
+            setValue("Hora", respuesta.dato.Hora);
+            setValue("Operador", respuesta.dato.Operador);
+        } else {
+            
+        }
+    
+     })
+    }, [])
+    
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue
   } = useForm();
+
   const onSubmit = (datos) => {
+    EditarAsientoApi(id,datos).then((respuesta)=>{
+        if (respuesta.status === 200) {
+            Swal.fire("Asiendo Editado","El asiento fue modificado con exito","success");
+            navegacion("/administrar/caja");
+        } else {
+            Swal.fire("Error inesperado","intentelo mas tarde","error");
+        }
+
+    })
     console.log(datos);
-    AgregarCajaApi(datos).then((respuesta)=>{
-      if (respuesta.status === 201) {
-        Swal.fire("Asiento generado", "Asiento generado Correctamente", "success");
-        navegacion("/administrar/caja")
-      } else {
-        Swal.fire("Error inesperado", "Intente Nuevamente", "error");
-      }
-    });
   };
+
+  const{id}= useParams();
+  console.log(id);
   const navegacion = useNavigate()
   return (
     <section className="mainSection bgGradient font">
@@ -78,11 +102,11 @@ const FormIngresoCaja = () => {
                 {...register("Monto", {
                   required: "Este es un campo obligatorio",
                   min: {
-                    value:1,
+                    value: 1,
                     message: "No puede ingresor un valor menor a  $1",
                   },
                   max: {
-                    value:100000,
+                    value: 100000,
                     message: "No puede ingresor un valor mayor a  $100000",
                   },
                 })}
@@ -150,4 +174,4 @@ const FormIngresoCaja = () => {
   );
 };
 
-export default FormIngresoCaja;
+export default FormEditarCaja;
