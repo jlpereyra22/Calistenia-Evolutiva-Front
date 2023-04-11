@@ -3,11 +3,11 @@
 //const urlCajaDiaria ="http://localhost:3004/cajaDiaria"
 
 //const mongo Local
-const url = process.env.REACT_APP_API_CALISTENIA_CLIENTES;
+const url = process.env.REACT_APP_API_LOCAL_CLIENTE;
 console.log(url)
-const urlCajaDiaria =process.env.REACT_APP_API_CALISTENIA_CAJADIARIA;
+const urlCajaDiaria =process.env.REACT_APP_API_LOCAL_CAJADIARIA;
 console.log(urlCajaDiaria)
-const url_usser = process.env.REACT_APP_API_CALISTENIA_USSER;
+const url_usser = process.env.REACT_APP_API_LOCAL_USSER;
 console.log(url_usser)
 
 //PETICIONES CLIENTES
