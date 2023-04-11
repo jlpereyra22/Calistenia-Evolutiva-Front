@@ -22,12 +22,12 @@ const Menu = (props) => {
           variant="dark"
           className="row justify-content-between m-0 p-0"
         >
-          <Col lg={5} className="text-lg-start text-center">
+          <Col lg={4} className="text-lg-start text-center">
             <Navbar.Brand as={Link} to="/">
               <img src={icono} alt="icono" className="w-25 m-0 p-0" />
             </Navbar.Brand>
           </Col>
-          <Col lg={5}>
+          <Col lg={6}>
             {props.UsuarioLogueado.Usuario ? (
               <>
                 <NavLink className="btn text-light m-1" to="/administrar">
@@ -36,6 +36,9 @@ const Menu = (props) => {
                 <NavLink className="btn text-light m-1" to="administrar/caja">
                   Caja Diaria
                 </NavLink>
+                <NavLink className="btn text link-light m-1 " to="/adminMaster">
+                Admin Maestro
+              </NavLink>
                 <Button variant="outline-danger" className="m-1" onClick={logout}>
                   LogOut
                 </Button>
