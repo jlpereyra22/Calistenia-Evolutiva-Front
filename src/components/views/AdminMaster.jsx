@@ -3,6 +3,7 @@ import { Button, Container } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import { consultarApiUser } from "../helpers/queris";
 import TablaUsuarios from "./user/TablaUsuarios";
+import { Link } from "react-router-dom";
 
 const AdminMaster = () => {
   const [usuario, setUsuario] = useState([]);
@@ -19,6 +20,16 @@ setUsuario(respuesta);
       <Container className="text-center text-white">
         <h2>Administrador de Usuarios</h2>
         <hr />
+        <div className="d-flex justify-content-end">
+          
+          <Link
+            className="m-3 btn btn-outline-success"
+            size="sm"
+            to="/adminMaster/agregarUsuario"
+          >
+            Agregar Usuario
+          </Link>
+        </div>
         <div>
           <Table striped bordered hover variant="dark">
             <thead>

@@ -11,6 +11,7 @@ import { useState } from "react";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
 import AdminMaster from "./components/views/AdminMaster";
+import AgregarUsuario from "./components/views/user/AgregarUsuario";
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem("tokenUsuario")) || {};
@@ -43,6 +44,7 @@ function App() {
           }
         />
         <Route exact path="/adminMaster" element={<AdminMaster />} />
+        <Route exact path="/adminMaster/agregarUsuario" element={<AgregarUsuario />} />
       </Routes>
       <Footer />
     </BrowserRouter>
