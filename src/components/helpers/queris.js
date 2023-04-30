@@ -146,6 +146,17 @@ export const EditarAsientoApi = async (id, datosActualizados) => {
 
 //PETICIONES USUARIO  
 
+export const consultarApiUser = async () => {
+  try {
+    const respuesta = await fetch(url_usser);
+    const listaUsuarios = await respuesta.json();
+    console.log(listaUsuarios);
+    return listaUsuarios;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const login = async (usuario)=>{
   try {
     const respuesta = await fetch(url_usser);

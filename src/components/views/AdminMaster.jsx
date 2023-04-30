@@ -1,7 +1,19 @@
+import { useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
+import { consultarApiUser } from "../helpers/queris";
+import TablaUsuarios from "./user/TablaUsuarios";
 
 const AdminMaster = () => {
+  const [usuario, setUsuario] = useState([]);
+
+  useEffect(() => {
+   consultarApiUser().then((respuesta)=>{
+console.log(respuesta);
+setUsuario(respuesta);
+   })
+  }, [])
+  
   return (
     <section className="mainSection bgGradient">
       <Container className="text-center text-white">
@@ -14,21 +26,13 @@ const AdminMaster = () => {
                 <th>Nombre y Apellido</th>
                 <th>Usuario</th>
                 <th>Contraseña</th>
+                <th>Rol</th>
                 <th>Modificar</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Juan Carlos</td>
-                <td>Juan61</td>
-                <td>uservalid</td>
-                <td> <Button variant="danger" className="m-1" size="sm" >
-            <i className="bi bi-bookmark-x-fill  text-white-50"></i>
-          </Button>
-          <Button  className="m-1 btn btn-warning btn-sm" >
-            <i className="bi bi-pencil-square text-white-50"></i>
-          </Button></td>
-              </tr>
+              {usuario.map((usuario)=> <TablaUsuarios key={usuario._id} usuario={usuario}/>)}
+            
             </tbody>
           </Table>
         </div>
