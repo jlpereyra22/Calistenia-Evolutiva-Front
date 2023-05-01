@@ -9,7 +9,7 @@ const urlCajaDiaria =process.env.REACT_APP_API_LOCAL_CAJADIARIA;
 console.log(urlCajaDiaria)
 const url_usser = process.env.REACT_APP_API_LOCAL_USSER;
 console.log(url_usser)
-
+const agregarUser= REACT_APP_API_LOCAL_USSER_AGREGAR
 //PETICIONES CLIENTES
 
 export const consultarApiCliente = async () => {
@@ -172,4 +172,19 @@ export const login = async (usuario)=>{
     console.log(error)
     return
   }
-}
+};
+
+export const AgregarUsuarioApi = async (usuario) => {
+  try {
+    const respuesta = await fetch(url_usser, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
