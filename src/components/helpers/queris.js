@@ -9,7 +9,7 @@ const urlCajaDiaria =process.env.REACT_APP_API_LOCAL_CAJADIARIA;
 console.log(urlCajaDiaria)
 const url_usser = process.env.REACT_APP_API_LOCAL_USSER;
 console.log(url_usser)
-const agregarUser= REACT_APP_API_LOCAL_USSER_AGREGAR
+
 //PETICIONES CLIENTES
 
 export const consultarApiCliente = async () => {
@@ -182,6 +182,21 @@ export const AgregarUsuarioApi = async (usuario) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(usuario),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const EditarUsuarioApi = async (id, datosActualizados) => {
+  try {
+    const respuesta = await fetch(`${url_usser}/${id}`, {
+      method: "PUT",
+      headers: {
+        "CONTENT-TYPE": "application/json",
+      },
+      body: JSON.stringify(datosActualizados),
     });
     return respuesta;
   } catch (error) {
