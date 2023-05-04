@@ -42,7 +42,7 @@ setUsuario(respuesta);
               </tr>
             </thead>
             <tbody>
-              {usuario.map((usuario)=> <TablaUsuarios key={usuario._id} usuario={usuario}/>)}
+              {usuario.map((usuario)=> <TablaUsuarios key={usuario._id} usuario={usuario} setUsuario={setUsuario}/>)}
             
             </tbody>
           </Table>

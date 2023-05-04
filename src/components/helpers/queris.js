@@ -189,6 +189,19 @@ export const AgregarUsuarioApi = async (usuario) => {
   }
 };
 
+export const ObtenerUsuarioApi = async (id) => {
+  try {
+    const respuesta = await fetch(`${url_usser}/${id}`);
+    const usuarioBuscado = {
+      dato: await respuesta.json(),
+      status: respuesta.status,
+    };
+    return usuarioBuscado;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const EditarUsuarioApi = async (id, datosActualizados) => {
   try {
     const respuesta = await fetch(`${url_usser}/${id}`, {
@@ -197,6 +210,17 @@ export const EditarUsuarioApi = async (id, datosActualizados) => {
         "CONTENT-TYPE": "application/json",
       },
       body: JSON.stringify(datosActualizados),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const BorrarUsuarioApi = async (id) => {
+  try {
+    const respuesta = await fetch(`${url_usser}/${id}`, {
+      method: "DELETE",
     });
     return respuesta;
   } catch (error) {
