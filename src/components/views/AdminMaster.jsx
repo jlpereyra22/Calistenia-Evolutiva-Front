@@ -25,7 +25,7 @@ setUsuario(respuesta);
           <Link
             className="m-3 btn btn-outline-success"
             size="sm"
-            to="/adminMaster/agregarUsuario"
+            to="/admin/agregarUsuario"
           >
             Agregar Usuario
           </Link>

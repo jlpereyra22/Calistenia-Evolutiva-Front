@@ -42,7 +42,7 @@ const TablaUsuarios = (props) => {
         <Button variant="danger" className="m-1" size="sm" onClick={borrarUsuario}>
           <i className="bi bi-bookmark-x-fill  text-white-50"></i>
         </Button>
-        <Link className="m-1 btn btn-warning btn-sm"  to={`/adminMaster/editarUsuario/${props.usuario._id}`}>
+        <Link className="m-1 btn btn-warning btn-sm"  to={`/admin/editarUsuario/${props.usuario._id}`}>
           <i className="bi bi-pencil-square text-white-50"></i>
         </Link>
       </td>
