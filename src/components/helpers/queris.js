@@ -4,11 +4,11 @@
 
 //const mongo Local
 const url = process.env.REACT_APP_API_LOCAL_CLIENTE;
-console.log(url)
-const urlCajaDiaria =process.env.REACT_APP_API_LOCAL_CAJADIARIA;
-console.log(urlCajaDiaria)
+console.log(url);
+const urlCajaDiaria = process.env.REACT_APP_API_LOCAL_CAJADIARIA;
+console.log(urlCajaDiaria);
 const url_usser = process.env.REACT_APP_API_LOCAL_USSER;
-console.log(url_usser)
+console.log(url_usser);
 
 //PETICIONES CLIENTES
 
@@ -144,7 +144,7 @@ export const EditarAsientoApi = async (id, datosActualizados) => {
   }
 };
 
-//PETICIONES USUARIO  
+//PETICIONES USUARIO
 
 export const consultarApiUser = async () => {
   try {
@@ -157,20 +157,22 @@ export const consultarApiUser = async () => {
   }
 };
 
-export const login = async (usuario)=>{
+export const login = async (usuario) => {
   try {
     const respuesta = await fetch(url_usser);
-    const listaUsuarios= await respuesta.json();
-    const usuarioBuscado = listaUsuarios.find((itemUsuario)=>itemUsuario.Usuario===usuario.Usuario)
-    if (usuarioBuscado.Contraseña=== usuario.Contraseña) {
+    const listaUsuarios = await respuesta.json();
+    const usuarioBuscado = listaUsuarios.find(
+      (itemUsuario) => itemUsuario.Usuario === usuario.Usuario
+    );
+    if (usuarioBuscado.Contraseña === usuario.Contraseña) {
       return usuarioBuscado;
     } else {
-      console.log("Usuario inexistente")
-      return
+      console.log("Usuario inexistente");
+      return;
     }
   } catch (error) {
-    console.log(error)
-    return
+    console.log(error);
+    return;
   }
 };
 
@@ -188,23 +190,9 @@ export const AgregarUsuarioApi = async (usuario) => {
     console.log(error);
   }
 };
-
-export const ObtenerUsuarioApi = async (id) => {
+export const EditarUsuarioApi = async (_id, datosActualizados) => {
   try {
-    const respuesta = await fetch(`${url_usser}/${id}`);
-    const usuarioBuscado = {
-      dato: await respuesta.json(),
-      status: respuesta.status,
-    };
-    return usuarioBuscado;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-export const EditarUsuarioApi = async (id, datosActualizados) => {
-  try {
-    const respuesta = await fetch(`${url_usser}/${id}`, {
+    const respuesta = await fetch(`${url_usser}/${_id}`, {
       method: "PUT",
       headers: {
         "CONTENT-TYPE": "application/json",
@@ -216,6 +204,21 @@ export const EditarUsuarioApi = async (id, datosActualizados) => {
     console.log(error);
   }
 };
+
+export const obtenerUsuarioApi = async (id) => {
+  try {
+    const respuesta = await fetch(url_usser + "/" + id);
+    const usuarioBuscado = {
+      dato: await respuesta.json(),
+      status: respuesta.status,
+    };
+    return usuarioBuscado;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 
 export const BorrarUsuarioApi = async (id) => {
   try {

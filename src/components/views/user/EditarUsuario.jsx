@@ -2,42 +2,44 @@ import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
-import { EditarUsuarioApi, ObtenerUsuarioApi } from "../../helpers/queris";
+import {  EditarUsuarioApi, obtenerUsuarioApi } from "../../helpers/queris";
 import Swal from "sweetalert2";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 const EditarUsuario = () => {
-    const { id } = useParams();
-  console.log(id);
-  useEffect(() => {
-    ObtenerUsuarioApi(id).then((respuesta) => {
-        setValue("Nombre", respuesta.dato.Nombre);
-        setValue("Usuario", respuesta.dato.Usuario);
-        setValue("Rol", respuesta.dato.Rol);
-        setValue("Contraseña", respuesta.dato.Contraseña);
-      console.log(respuesta);
-    });
-  }, []);
-
+  const {id}= useParams();
+  console.log(id)
+useEffect(()=>{
+    obtenerUsuarioApi(id).then((respuesta)=>{
+setValue("Nombre",respuesta.dato.Nombre)
+setValue("Usuario",respuesta.dato.Usuario)
+setValue("Rol",respuesta.dato.Rol)
+setValue("Contraseña",respuesta.dato.Contraseña)
+    })
+},[])
   const {
     register,
     handleSubmit,
     formState: { errors },
-    setValue,
+   setValue
   } = useForm();
 
-  
-
-  const onSubmit = (usuarioActual) => {
-    EditarUsuarioApi(id, usuarioActual).then((respuesta) => {
+  const onSubmit = (usuarioActua) => {
+    
+    EditarUsuarioApi(id, usuarioActua).then((respuesta) => {
       if (respuesta.status === 200) {
         Swal.fire("Producto Actualizado", "Actualizacion Correcta", "success");
+        navegacion("/adminMaster");
       } else {
         Swal.fire("Error inesperado", "Intente Nuevamente", "error");
       }
     });
   };
+
+  const navegacion = useNavigate()
+
+ 
 
   return (
     <section className="bgGradient mainSection font">
