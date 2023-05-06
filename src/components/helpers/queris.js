@@ -4,11 +4,11 @@
 
 //const mongo Local
 const url = process.env.REACT_APP_API_CALISTENIA_CLIENTES;
-console.log(url)
-const urlCajaDiaria =process.env.REACT_APP_API_CALISTENIA_CAJADIARIA;
-console.log(urlCajaDiaria)
+
+const urlCajaDiaria = process.env.REACT_APP_API_CALISTENIA_CAJADIARIA;
+
 const url_usser = process.env.REACT_APP_API_CALISTENIA_USSER;
-console.log(url_usser)
+
 
 //PETICIONES CLIENTES
 
@@ -16,10 +16,10 @@ export const consultarApiCliente = async () => {
   try {
     const respuesta = await fetch(url);
     const listaClientes = await respuesta.json();
-    console.log(listaClientes);
+
     return listaClientes;
   } catch (error) {
-    console.log(error);
+  
   }
 };
 
@@ -34,7 +34,7 @@ export const AgregarClienteApi = async (cliente) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+  
   }
 };
 
@@ -45,7 +45,7 @@ export const BorrarClienteApi = async (id) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+  
   }
 };
 
@@ -58,7 +58,7 @@ export const ObtenerClienteApi = async (id) => {
     };
     return clienteBuscado;
   } catch (error) {
-    console.log(error);
+    
   }
 };
 
@@ -73,7 +73,7 @@ export const EditarClienteApi = async (_id, datosActualizados) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+   
   }
 };
 
@@ -83,10 +83,10 @@ export const consultarApiCaja = async () => {
   try {
     const respuesta = await fetch(urlCajaDiaria);
     const listaMovimientos = await respuesta.json();
-    console.log(listaMovimientos);
+    
     return listaMovimientos;
   } catch (error) {
-    console.log(error);
+    
   }
 };
 
@@ -101,7 +101,7 @@ export const AgregarCajaApi = async (asiento) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+   
   }
 };
 
@@ -112,7 +112,7 @@ export const BorrarAsientoApi = async (id) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+    
   }
 };
 
@@ -140,25 +140,93 @@ export const EditarAsientoApi = async (id, datosActualizados) => {
     });
     return respuesta;
   } catch (error) {
+    
+  }
+};
+
+//PETICIONES USUARIO
+
+export const consultarApiUser = async () => {
+  try {
+    const respuesta = await fetch(url_usser);
+    const listaUsuarios = await respuesta.json();
+ 
+    return listaUsuarios;
+  } catch (error) {
     console.log(error);
   }
 };
 
-//PETICIONES USUARIO  
-
-export const login = async (usuario)=>{
+export const login = async (usuario) => {
   try {
     const respuesta = await fetch(url_usser);
-    const listaUsuarios= await respuesta.json();
-    const usuarioBuscado = listaUsuarios.find((itemUsuario)=>itemUsuario.Usuario===usuario.Usuario)
-    if (usuarioBuscado.Contraseña=== usuario.Contraseña) {
+    const listaUsuarios = await respuesta.json();
+    const usuarioBuscado = listaUsuarios.find(
+      (itemUsuario) => itemUsuario.Usuario === usuario.Usuario
+    );
+    if (usuarioBuscado.Contraseña === usuario.Contraseña) {
       return usuarioBuscado;
     } else {
-      console.log("Usuario inexistente")
-      return
+      console.log("Usuario inexistente");
+      return;
     }
   } catch (error) {
-    console.log(error)
-    return
+    console.log(error);
+    return;
   }
-}
+};
+
+export const AgregarUsuarioApi = async (usuario) => {
+  try {
+    const respuesta = await fetch(url_usser, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    });
+    return respuesta;
+  } catch (error) {
+  
+  }
+};
+export const EditarUsuarioApi = async (_id, datosActualizados) => {
+  try {
+    const respuesta = await fetch(`${url_usser}/${_id}`, {
+      method: "PUT",
+      headers: {
+        "CONTENT-TYPE": "application/json",
+      },
+      body: JSON.stringify(datosActualizados),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const obtenerUsuarioApi = async (id) => {
+  try {
+    const respuesta = await fetch(url_usser + "/" + id);
+    const usuarioBuscado = {
+      dato: await respuesta.json(),
+      status: respuesta.status,
+    };
+    return usuarioBuscado;
+  } catch (error) {
+    
+  }
+};
+
+
+
+export const BorrarUsuarioApi = async (id) => {
+  try {
+    const respuesta = await fetch(`${url_usser}/${id}`, {
+      method: "DELETE",
+    });
+    return respuesta;
+  } catch (error) {
+    
+  }
+};

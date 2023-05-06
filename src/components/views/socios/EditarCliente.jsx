@@ -18,7 +18,7 @@ const EditarCliente = () => {
       setValue("Estado", respuesta.dato.Estado);
       setValue("FPago", respuesta.dato.FPago);
       setValue("Monto", respuesta.dato.Monto);
-      console.log(respuesta);
+   
     });
   }, []);
 
@@ -29,13 +29,13 @@ const EditarCliente = () => {
     setValue,
   } = useForm();
   const { id } = useParams();
-  console.log(id);
+
 
   const onSubmit = (clienteActua) => {
     
     EditarClienteApi(id, clienteActua).then((respuesta) => {
       if (respuesta.status === 200) {
-        Swal.fire("Producto Actualizado", "Actualizacion Correcta", "success");
+        Swal.fire("Cliente Actualizado", "Actualizacion Correcta", "success");
         navegacion("/administrar");
       } else {
         Swal.fire("Error inesperado", "Intente Nuevamente", "error");

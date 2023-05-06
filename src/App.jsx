@@ -1,19 +1,20 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/commons/Footer";
 import Menu from "./components/commons/Menu";
-import Administrador from "./components/views/Administrador";
 import Error404 from "./components/views/Error404";
 import Home from "./components/views/Home";
-import AgregarCliente from "./components/views/socios/AgregarCliente";
-import EditarCliente from "./components/views/socios/EditarCliente";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../src/app.css";
 import LoginUsser from "./components/views/LoginUsser";
-
 import { useState } from "react";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
+import AdminMaster from "./components/views/AdminMaster";
+import AgregarUsuario from "./components/views/user/AgregarUsuario";
+import EditarUsuario from "./components/views/user/EditarUsuario";
+import RutasProtegidasMaster from "./components/routes/RutasProtegidasMaster";
+import RutasMaster from "./components/routes/RutasMaster";
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem("tokenUsuario")) || {};
@@ -36,11 +37,20 @@ function App() {
           element={<LoginUsser setUsuarioLogueado={setUsuarioLogueado} />}
         />
 
-        <Route exact path="administrar/*" element={
-          <RutasProtegidas>
-            <RutasAdmin/>
-          </RutasProtegidas>
-        }/>
+        <Route
+          exact
+          path="administrar/*"
+          element={
+            <RutasProtegidas>
+              <RutasAdmin />
+            </RutasProtegidas>
+          }
+        />
+       <Route exact path="admin/*" element={
+        <RutasProtegidasMaster>
+          <RutasMaster/>
+        </RutasProtegidasMaster>
+       }/>
       </Routes>
       <Footer />
     </BrowserRouter>

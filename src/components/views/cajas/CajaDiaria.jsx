@@ -26,8 +26,7 @@ const CajaDiaria = () => {
     });
   }, []);
 
-  console.log(cajaIngreso);
-  console.log(cajaEgreso);
+ 
 
   let sumaIngreso = cajaIngreso.reduce(
     (acumulador, actual) => acumulador + actual.Monto,
@@ -38,11 +37,10 @@ const CajaDiaria = () => {
     0
   );
 
-  console.log(sumaIngreso);
-  console.log(sumaEgreso);
+
 
   const resultado = sumaIngreso - sumaEgreso;
-  console.log(resultado);
+ 
 
   return (
     <section className="mainSection bgGradient font">
@@ -52,7 +50,8 @@ const CajaDiaria = () => {
           <hr />
           <div className="text-end my-5">
             <Link
-              className="m-3 btn btn-outline-success fs-4"
+              className="m-3 btn btn-outline-success fs-4 "
+              size="sm"
               to="administrar/formCaja"
             >
               Asiento <i className="bi bi-plus-circle-fill"></i>
