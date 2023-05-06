@@ -9,7 +9,7 @@ import { useEffect } from "react";
 
 const EditarUsuario = () => {
   const {id}= useParams();
-  console.log(id)
+ 
 useEffect(()=>{
     obtenerUsuarioApi(id).then((respuesta)=>{
 setValue("Nombre",respuesta.dato.Nombre)

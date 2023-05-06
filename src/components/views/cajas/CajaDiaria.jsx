@@ -26,8 +26,7 @@ const CajaDiaria = () => {
     });
   }, []);
 
-  console.log(cajaIngreso);
-  console.log(cajaEgreso);
+ 
 
   let sumaIngreso = cajaIngreso.reduce(
     (acumulador, actual) => acumulador + actual.Monto,
@@ -38,11 +37,10 @@ const CajaDiaria = () => {
     0
   );
 
-  console.log(sumaIngreso);
-  console.log(sumaEgreso);
+
 
   const resultado = sumaIngreso - sumaEgreso;
-  console.log(resultado);
+ 
 
   return (
     <section className="mainSection bgGradient font">

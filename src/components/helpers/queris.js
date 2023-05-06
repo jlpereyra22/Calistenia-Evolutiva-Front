@@ -3,12 +3,12 @@
 //const urlCajaDiaria ="http://localhost:3004/cajaDiaria"
 
 //const mongo Local
-const url = process.env.REACT_APP_API_LOCAL_CLIENTE;
-console.log(url);
-const urlCajaDiaria = process.env.REACT_APP_API_LOCAL_CAJADIARIA;
-console.log(urlCajaDiaria);
-const url_usser = process.env.REACT_APP_API_LOCAL_USSER;
-console.log(url_usser);
+const url = process.env.REACT_APP_API_CALISTENIA_CLIENTES;
+
+const urlCajaDiaria = process.env.REACT_APP_API_CALISTENIA_CAJADIARIA;
+
+const url_usser = process.env.REACT_APP_API_CALISTENIA_USSER;
+
 
 //PETICIONES CLIENTES
 
@@ -16,10 +16,10 @@ export const consultarApiCliente = async () => {
   try {
     const respuesta = await fetch(url);
     const listaClientes = await respuesta.json();
-    console.log(listaClientes);
+
     return listaClientes;
   } catch (error) {
-    console.log(error);
+  
   }
 };
 
@@ -34,7 +34,7 @@ export const AgregarClienteApi = async (cliente) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+  
   }
 };
 
@@ -45,7 +45,7 @@ export const BorrarClienteApi = async (id) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+  
   }
 };
 
@@ -58,7 +58,7 @@ export const ObtenerClienteApi = async (id) => {
     };
     return clienteBuscado;
   } catch (error) {
-    console.log(error);
+    
   }
 };
 
@@ -73,7 +73,7 @@ export const EditarClienteApi = async (_id, datosActualizados) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+   
   }
 };
 
@@ -83,10 +83,10 @@ export const consultarApiCaja = async () => {
   try {
     const respuesta = await fetch(urlCajaDiaria);
     const listaMovimientos = await respuesta.json();
-    console.log(listaMovimientos);
+    
     return listaMovimientos;
   } catch (error) {
-    console.log(error);
+    
   }
 };
 
@@ -101,7 +101,7 @@ export const AgregarCajaApi = async (asiento) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+   
   }
 };
 
@@ -112,7 +112,7 @@ export const BorrarAsientoApi = async (id) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+    
   }
 };
 
@@ -140,7 +140,7 @@ export const EditarAsientoApi = async (id, datosActualizados) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+    
   }
 };
 
@@ -150,7 +150,7 @@ export const consultarApiUser = async () => {
   try {
     const respuesta = await fetch(url_usser);
     const listaUsuarios = await respuesta.json();
-    console.log(listaUsuarios);
+ 
     return listaUsuarios;
   } catch (error) {
     console.log(error);
@@ -187,7 +187,7 @@ export const AgregarUsuarioApi = async (usuario) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+  
   }
 };
 export const EditarUsuarioApi = async (_id, datosActualizados) => {
@@ -214,7 +214,7 @@ export const obtenerUsuarioApi = async (id) => {
     };
     return usuarioBuscado;
   } catch (error) {
-    console.log(error);
+    
   }
 };
 
@@ -227,6 +227,6 @@ export const BorrarUsuarioApi = async (id) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+    
   }
 };

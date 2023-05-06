@@ -18,7 +18,7 @@ const EditarCliente = () => {
       setValue("Estado", respuesta.dato.Estado);
       setValue("FPago", respuesta.dato.FPago);
       setValue("Monto", respuesta.dato.Monto);
-      console.log(respuesta);
+   
     });
   }, []);
 
@@ -29,7 +29,7 @@ const EditarCliente = () => {
     setValue,
   } = useForm();
   const { id } = useParams();
-  console.log(id);
+
 
   const onSubmit = (clienteActua) => {
     

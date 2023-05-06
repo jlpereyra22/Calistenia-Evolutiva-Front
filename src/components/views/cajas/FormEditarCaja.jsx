@@ -11,7 +11,7 @@ const FormEditarCaja = () => {
     useEffect(() => {
      ObtenerAsientoApi(id).then((respuesta)=>{
         if (respuesta.status === 200) {
-            console.log(respuesta);
+           
             setValue("Nombre", respuesta.dato.Nombre);
             setValue("Operacion", respuesta.dato.Operacion);
             setValue("Monto", respuesta.dato.Monto);
@@ -42,11 +42,11 @@ const FormEditarCaja = () => {
         }
 
     })
-    console.log(datos);
+  
   };
 
   const{id}= useParams();
-  console.log(id);
+
   const navegacion = useNavigate()
   return (
     <section className="mainSection bgGradient font">

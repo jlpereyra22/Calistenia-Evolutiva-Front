@@ -10,7 +10,7 @@ const AdminMaster = () => {
 
   useEffect(() => {
    consultarApiUser().then((respuesta)=>{
-console.log(respuesta);
+
 setUsuario(respuesta);
    })
   }, [])
