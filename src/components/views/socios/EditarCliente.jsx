@@ -35,7 +35,7 @@ const EditarCliente = () => {
     
     EditarClienteApi(id, clienteActua).then((respuesta) => {
       if (respuesta.status === 200) {
-        Swal.fire("Producto Actualizado", "Actualizacion Correcta", "success");
+        Swal.fire("Cliente Actualizado", "Actualizacion Correcta", "success");
         navegacion("/administrar");
       } else {
         Swal.fire("Error inesperado", "Intente Nuevamente", "error");

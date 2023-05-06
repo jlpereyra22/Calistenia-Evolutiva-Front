@@ -22,7 +22,7 @@ const AgregarUsuario = () => {
           "El Usuario fue agregado con exito",
           "success"
         );
-        navegacion("/adminMaster");
+        navegacion("/admin/adminMaster");
       } else {
         Swal.fire(
           "Ocurrio un Error",

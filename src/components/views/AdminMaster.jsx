@@ -16,7 +16,7 @@ setUsuario(respuesta);
   }, [])
   
   return (
-    <section className="mainSection bgGradient">
+    <section className="bgGradient mainSection font">
       <Container className="text-center text-white">
         <h2>Administrador de Usuarios</h2>
         <hr />
@@ -36,8 +36,8 @@ setUsuario(respuesta);
               <tr>
                 <th>Nombre y Apellido</th>
                 <th>Usuario</th>
-                <th>Contraseña</th>
                 <th>Rol</th>
+                <th>Contraseña</th>
                 <th>Modificar</th>
               </tr>
             </thead>

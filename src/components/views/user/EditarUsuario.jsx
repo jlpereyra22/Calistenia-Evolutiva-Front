@@ -29,8 +29,8 @@ setValue("Contraseña",respuesta.dato.Contraseña)
     
     EditarUsuarioApi(id, usuarioActua).then((respuesta) => {
       if (respuesta.status === 200) {
-        Swal.fire("Producto Actualizado", "Actualizacion Correcta", "success");
-        navegacion("/adminMaster");
+        Swal.fire("Usuario Actualizado", "Actualizacion Correcta", "success");
+        navegacion("/admin/adminMaster");
       } else {
         Swal.fire("Error inesperado", "Intente Nuevamente", "error");
       }

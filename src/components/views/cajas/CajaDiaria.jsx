@@ -52,7 +52,8 @@ const CajaDiaria = () => {
           <hr />
           <div className="text-end my-5">
             <Link
-              className="m-3 btn btn-outline-success fs-4"
+              className="m-3 btn btn-outline-success fs-4 "
+              size="sm"
               to="administrar/formCaja"
             >
               Asiento <i className="bi bi-plus-circle-fill"></i>
