@@ -1,5 +1,5 @@
 import icono from "../img/icono.jpeg"
-
+import gorila from "../img/gorila.JPG"
 const Home = () => {
   return (
     <section className="mainSection text-center bg-black">
