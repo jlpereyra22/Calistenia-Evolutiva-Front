@@ -207,7 +207,7 @@ const EditarCliente = () => {
               </Form.Text>
             </Form.Group>
             <Button variant="outline-success" size="lg" type="submit">
-              Agregar
+              Editar
             </Button>
           </Form>
         </div>
