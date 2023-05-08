@@ -124,6 +124,11 @@ const AgregarCliente = () => {
                     message:
                       "El Mail como maximo debe tener hasta 50 caracteres",
                   },
+                   pattern: {
+                    value:
+                      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                    message: "Debe ingresar un mail válido.",
+                  },
                 })}
               />
               <Form.Text className="text-warning">

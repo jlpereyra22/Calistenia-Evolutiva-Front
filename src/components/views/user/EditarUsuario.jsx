@@ -115,11 +115,11 @@ setValue("Contraseña",respuesta.dato.Contraseña)
                 required: "Este dato es obligatorio",
                 minLength: {
                   value: 2,
-                  message: "El nombre como minimo debe contener 2 caracteres",
+                  message: "La contraseña como minimo debe contener 2 caracteres",
                 },
                 maxLength: {
                   value: 30,
-                  message: "El nombre no debe superar los 30 caracteres ",
+                  message: "La contraseña no debe superar los 30 caracteres ",
                 },
               })}
             />
