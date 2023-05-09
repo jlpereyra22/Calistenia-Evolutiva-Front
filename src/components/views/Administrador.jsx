@@ -18,7 +18,7 @@ const Administrador = () => {
   
   const searcher = (e) => {
     setClienteBuscado(e.target.value);
-    console.log(e.target.value);
+    
   };
  
   const results = !clienteBuscado ? clientes : clientes.filter((dato)=> dato.Nombre.toLowerCase().includes(clienteBuscado.toLocaleLowerCase()))
