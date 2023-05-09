@@ -8,46 +8,45 @@ import Swal from "sweetalert2";
 import { EditarAsientoApi, ObtenerAsientoApi } from "../../helpers/queris";
 
 const FormEditarCaja = () => {
-    useEffect(() => {
-     ObtenerAsientoApi(id).then((respuesta)=>{
-        if (respuesta.status === 200) {
-           
-            setValue("Nombre", respuesta.dato.Nombre);
-            setValue("Operacion", respuesta.dato.Operacion);
-            setValue("Monto", respuesta.dato.Monto);
-            setValue("Fecha", respuesta.dato.Fecha);
-            setValue("Hora", respuesta.dato.Hora);
-            setValue("Operador", respuesta.dato.Operador);
-        } else {
-            
-        }
-    
-     })
-    }, [])
-    
+  useEffect(() => {
+    ObtenerAsientoApi(id).then((respuesta) => {
+      if (respuesta.status === 200) {
+        setValue("Nombre", respuesta.dato.Nombre);
+        setValue("Operacion", respuesta.dato.Operacion);
+        setValue("Monto", respuesta.dato.Monto);
+        setValue("Fecha", respuesta.dato.Fecha);
+        setValue("Hora", respuesta.dato.Hora);
+        setValue("Operador", respuesta.dato.Operador);
+      } else {
+      }
+    });
+  }, []);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-    setValue
+    setValue,
   } = useForm();
 
   const onSubmit = (datos) => {
-    EditarAsientoApi(id,datos).then((respuesta)=>{
-        if (respuesta.status === 200) {
-            Swal.fire("Asiendo Editado","El asiento fue modificado con exito","success");
-            navegacion("/administrar/caja");
-        } else {
-            Swal.fire("Error inesperado","intentelo mas tarde","error");
-        }
-
-    })
-  
+    EditarAsientoApi(id, datos).then((respuesta) => {
+      if (respuesta.status === 200) {
+        Swal.fire(
+          "Asiendo Editado",
+          "El asiento fue modificado con exito",
+          "success"
+        );
+        navegacion("/administrar/caja");
+      } else {
+        Swal.fire("Error inesperado", "intentelo mas tarde", "error");
+      }
+    });
   };
 
-  const{id}= useParams();
+  const { id } = useParams();
 
-  const navegacion = useNavigate()
+  const navegacion = useNavigate();
   return (
     <section className="mainSection bgGradient font">
       <Container>

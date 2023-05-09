@@ -2,31 +2,30 @@ import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
-import {  EditarUsuarioApi, obtenerUsuarioApi } from "../../helpers/queris";
+import { EditarUsuarioApi, obtenerUsuarioApi } from "../../helpers/queris";
 import Swal from "sweetalert2";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 const EditarUsuario = () => {
-  const {id}= useParams();
- 
-useEffect(()=>{
-    obtenerUsuarioApi(id).then((respuesta)=>{
-setValue("Nombre",respuesta.dato.Nombre)
-setValue("Usuario",respuesta.dato.Usuario)
-setValue("Rol",respuesta.dato.Rol)
-setValue("Contraseña",respuesta.dato.Contraseña)
-    })
-},[])
+  const { id } = useParams();
+
+  useEffect(() => {
+    obtenerUsuarioApi(id).then((respuesta) => {
+      setValue("Nombre", respuesta.dato.Nombre);
+      setValue("Usuario", respuesta.dato.Usuario);
+      setValue("Rol", respuesta.dato.Rol);
+      setValue("Contraseña", respuesta.dato.Contraseña);
+    });
+  }, []);
   const {
     register,
     handleSubmit,
     formState: { errors },
-   setValue
+    setValue,
   } = useForm();
 
   const onSubmit = (usuarioActua) => {
-    
     EditarUsuarioApi(id, usuarioActua).then((respuesta) => {
       if (respuesta.status === 200) {
         Swal.fire("Usuario Actualizado", "Actualizacion Correcta", "success");
@@ -37,9 +36,7 @@ setValue("Contraseña",respuesta.dato.Contraseña)
     });
   };
 
-  const navegacion = useNavigate()
-
- 
+  const navegacion = useNavigate();
 
   return (
     <section className="bgGradient mainSection font">
@@ -115,7 +112,8 @@ setValue("Contraseña",respuesta.dato.Contraseña)
                 required: "Este dato es obligatorio",
                 minLength: {
                   value: 2,
-                  message: "La contraseña como minimo debe contener 2 caracteres",
+                  message:
+                    "La contraseña como minimo debe contener 2 caracteres",
                 },
                 maxLength: {
                   value: 30,

@@ -15,7 +15,7 @@ const AgregarCliente = () => {
   } = useForm();
 
   const onSubmit = (datos) => {
-    console.log(datos);
+   
     AgregarClienteApi(datos).then((respuesta) => {
       if (respuesta.status === 201) {
         Swal.fire(

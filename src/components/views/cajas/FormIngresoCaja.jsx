@@ -13,7 +13,7 @@ const FormIngresoCaja = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (datos) => {
-    console.log(datos);
+ 
     AgregarCajaApi(datos).then((respuesta)=>{
       if (respuesta.status === 201) {
         Swal.fire("Asiento generado", "Asiento generado Correctamente", "success");

@@ -14,7 +14,6 @@ const AgregarUsuario = () => {
   } = useForm();
 
   const onSubmit = (datos) => {
-    console.log(datos);
     AgregarUsuarioApi(datos).then((respuesta) => {
       if (respuesta.status === 201) {
         Swal.fire(
